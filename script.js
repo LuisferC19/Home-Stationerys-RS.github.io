@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const carritoTotalSpan = document.getElementById('carritoTotal');
     const contadorCarritoSpan = document.getElementById('contadorCarrito');
     const enviarPedidoBtn = document.getElementById('enviarPedidoBtn');
+    const vaciarCarritoBtn = document.getElementById('vaciarCarritoBtn');
     const buscadorInput = document.getElementById('buscador');
     const categoriaFiltroSelect = document.getElementById('categoriaFiltro');
     const btnMenu = document.getElementById('btnMenu');
@@ -26,9 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('themeToggleBtn');
     const carritoFlotante = document.getElementById('carritoFlotante');
     const toastDiv = document.getElementById('toast');
-    const modalImagen = document.getElementById('modalImagen');
-    const imagenModalContent = document.getElementById('imagenModal');
-    const cerrarModalBtn = document.getElementById('cerrarModal');
     const searchSuggestionsDiv = document.getElementById('searchSuggestions');
     const vistosRecientementeDiv = document.getElementById('vistosRecientemente');
     const historialPedidosBtn = document.getElementById('historialPedidosBtn');
@@ -44,11 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const infoDescuentoP = document.getElementById('infoDescuento');
     const infoEnvioP = document.getElementById('infoEnvio');
     const encuestaContainer = document.getElementById('encuestaContainer');
-    const modalDescripcion = document.getElementById('modalDescripcion');
-    const cerrarDescripcionModalBtn = document.getElementById('cerrarDescripcionModal');
-    const descripcionTitulo = document.getElementById('descripcionTitulo');
-    const descripcionTexto = document.getElementById('descripcionTexto');
-
 
     function renderizarProductos(productosAMostrar) {
         catalogoDiv.innerHTML = '';
@@ -66,11 +59,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="share-btn" aria-label="Compartir por WhatsApp">
                     <img src="https://img.icons8.com/color/24/000000/whatsapp--v1.png" alt="WhatsApp">
                 </button>
-                <img src="${producto.imagen}" alt="${producto.nombre}" loading="lazy">
-                <h3>${producto.nombre}</h3>
+                <a href="producto.html?id=${producto.id}" class="producto-link">
+                    <img src="${producto.imagen}" alt="${producto.nombre}" loading="lazy" class="producto-imagen">
+                    <h3>${producto.nombre}</h3>
+                </a>
                 <p class="precio">$${producto.precio.toFixed(2)}</p>
                 <p class="stock-info">Disponibles: ${producto.stock}</p>
-                <button class="btn-agregar-carrito" aria-label="Agregar ${producto.nombre} al carrito">Agregar al Carrito</button>
+                <div class="agregar-controls">
+                    <input type="number" class="cantidad-input" value="1" min="1" max="${producto.stock}" aria-label="Cantidad">
+                    <button class="btn-agregar-carrito" aria-label="Agregar al carrito">Agregar</button>
+                </div>
             `;
             catalogoDiv.appendChild(productoCard);
         });
@@ -79,30 +77,28 @@ document.addEventListener('DOMContentLoaded', () => {
     function compartirProducto(idProducto) {
         const producto = productos.find(p => p.id === idProducto);
         const text = `¡Mira este producto en Home & Stationery: ${producto.nombre} por solo $${producto.precio.toFixed(2)}!`;
-        const pageUrl = window.location.href;
+        const pageUrl = window.location.origin + window.location.pathname.replace('index.html', '') + `producto.html?id=${producto.id}`;
         
         const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + pageUrl)}`;
         window.open(url, '_blank');
     }
 
-    btnMenu.addEventListener('click', () => {
-        sidebar.classList.toggle('visible');
-    });
-
     catalogoDiv.addEventListener('click', e => {
-        const productoCard = e.target.closest('.producto');
+        const target = e.target;
+        const productoCard = target.closest('.producto');
         if (!productoCard) return;
 
         const id = parseInt(productoCard.dataset.id);
         
-        if (e.target.classList.contains('btn-agregar-carrito')) {
-            agregarAlCarrito(id);
-        } else if (e.target.closest('.share-btn')) {
+        if (target.classList.contains('btn-agregar-carrito')) {
+            const cantidadInput = productoCard.querySelector('.cantidad-input');
+            const cantidad = parseInt(cantidadInput.value);
+            const imgElement = productoCard.querySelector('.producto-imagen');
+            agregarAlCarrito(id, cantidad, imgElement);
+        } else if (target.closest('.share-btn')) {
             compartirProducto(id);
-        } else {
-            mostrarDescripcion(id);
-            logRecentView(id);
         }
+        // El clic en la imagen o título se maneja por el enlace <a> ahora
     });
 
     async function init() {
@@ -217,7 +213,11 @@ document.addEventListener('DOMContentLoaded', () => {
         productosVistos.reverse().slice(0, 5).forEach(producto => {
             const productoCard = document.createElement('div');
             productoCard.classList.add('producto');
-            productoCard.innerHTML = `<img src="${producto.imagen}" alt="${producto.nombre}" loading="lazy"><h3>${producto.nombre}</h3><button onclick="document.getElementById('buscador').value='${producto.nombre}'; filtrarProductos();">Ver producto</button>`;
+            productoCard.innerHTML = `
+                <a href="producto.html?id=${producto.id}" class="producto-link">
+                    <img src="${producto.imagen}" alt="${producto.nombre}" loading="lazy">
+                    <h3>${producto.nombre}</h3>
+                </a>`;
             vistosRecientementeDiv.appendChild(productoCard);
         });
     }
@@ -257,28 +257,59 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    function mostrarDescripcion(idProducto) {
-        const producto = productos.find(p => p.id === idProducto);
-        if (!producto) return;
-        descripcionTitulo.textContent = producto.nombre;
-        descripcionTexto.textContent = producto.descripcion || 'Este producto no tiene una descripción disponible.';
-        modalDescripcion.classList.remove('oculto');
+    function animarVueloAlCarrito(imgElement) {
+        const imgRect = imgElement.getBoundingClientRect();
+        const carritoRect = abrirCarritoBtn.getBoundingClientRect();
+        
+        const imgClon = imgElement.cloneNode();
+        imgClon.classList.add('producto-imagen-volando');
+        
+        imgClon.style.width = `${imgRect.width}px`;
+        imgClon.style.height = `${imgRect.height}px`;
+        imgClon.style.top = `${imgRect.top}px`;
+        imgClon.style.left = `${imgRect.left}px`;
+        
+        document.body.appendChild(imgClon);
+
+        // Forzar reflow para que la transición se aplique
+        imgClon.offsetHeight; 
+
+        imgClon.style.setProperty('--target-top', `${carritoRect.top + carritoRect.height / 2}px`);
+        imgClon.style.setProperty('--target-left', `${carritoRect.left + carritoRect.width / 2}px`);
+        
+        imgClon.style.top = `var(--target-top)`;
+        imgClon.style.left = `var(--target-left)`;
+
+        imgClon.addEventListener('animationend', () => {
+            imgClon.remove();
+        });
     }
 
-    function agregarAlCarrito(idProducto) {
+    function agregarAlCarrito(idProducto, cantidad = 1, imgElement) {
         const producto = productos.find(p => p.id === idProducto);
+        if (!producto) return;
+
+        if (imgElement) {
+            animarVueloAlCarrito(imgElement);
+        }
+
         const itemEnCarrito = appState.carrito.find(p => p.id === idProducto);
         if (itemEnCarrito) {
-            if (itemEnCarrito.cantidad < producto.stock) {
-                itemEnCarrito.cantidad++;
-                mostrarToast(`${producto.nombre} agregado.`);
+            const nuevaCantidad = itemEnCarrito.cantidad + cantidad;
+            if (nuevaCantidad <= producto.stock) {
+                itemEnCarrito.cantidad = nuevaCantidad;
+                mostrarToast(`${cantidad} x ${producto.nombre} agregado(s).`);
             } else {
-                mostrarToast('No hay más stock disponible.', 'error');
+                mostrarToast(`No puedes agregar más. Solo quedan ${producto.stock - itemEnCarrito.cantidad} disponibles.`, 'error');
             }
         } else {
-            appState.carrito.push({ ...producto, cantidad: 1 });
-            mostrarToast(`${producto.nombre} agregado al carrito.`);
-            recomendarProductos(producto.categoria, producto.id);
+            if (cantidad <= producto.stock) {
+                appState.carrito.push({ ...producto, cantidad: cantidad });
+                mostrarToast(`${cantidad} x ${producto.nombre} agregado(s) al carrito.`);
+                recomendarProductos(producto.categoria, producto.id);
+            } else {
+                 mostrarToast(`No puedes agregar esa cantidad. Solo hay ${producto.stock} disponibles.`, 'error');
+            }
         }
         actualizarYGuardarCarrito();
     }
@@ -297,6 +328,18 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarYGuardarCarrito();
     }
     
+    function vaciarCarrito() {
+        if (appState.carrito.length > 0) {
+            if (confirm('¿Estás seguro de que quieres vaciar todo tu carrito?')) {
+                appState.carrito = [];
+                actualizarYGuardarCarrito();
+                mostrarToast('El carrito ha sido vaciado.', 'info');
+            }
+        } else {
+            mostrarToast('El carrito ya está vacío.', 'error');
+        }
+    }
+
     function guardarCarritoActual() {
         if(appState.carrito.length === 0) {
             mostrarToast('El carrito está vacío.', 'error');
@@ -359,7 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
         appState.theme = appState.theme === 'light' ? 'dark' : 'light';
         document.body.dataset.theme = appState.theme;
         themeToggleBtn.textContent = appState.theme === 'light' ? '🌙' : '☀️';
-        saveState('theme');
+        localStorage.setItem('theme', appState.theme);
     }
 
     function enviarPedidoWhatsApp() {
@@ -389,6 +432,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => encuestaContainer.classList.remove('oculto'), 2000);
     }
     
+    // --- Event Listeners ---
+    btnMenu.addEventListener('click', () => sidebar.classList.toggle('visible'));
     buscadorInput.addEventListener('input', () => renderizarSugerencias(buscadorInput.value));
     buscadorInput.addEventListener('keyup', filtrarProductos);
     themeToggleBtn.addEventListener('click', toggleTheme);
@@ -402,9 +447,8 @@ document.addEventListener('DOMContentLoaded', () => {
     contenidoCarritoDiv.addEventListener('click', e => { if (e.target.classList.contains('btn-eliminar-item')) { const id = parseInt(e.target.closest('.carrito-item').dataset.id); eliminarDelCarrito(id); } });
     abrirCarritoBtn.addEventListener('click', () => carritoFlotante.classList.add('abierto'));
     cerrarCarritoBtn.addEventListener('click', () => carritoFlotante.classList.remove('abierto'));
-    cerrarModalBtn.addEventListener('click', () => modalImagen.classList.add('oculto'));
-    cerrarDescripcionModalBtn.addEventListener('click', () => modalDescripcion.classList.add('oculto'));
     enviarPedidoBtn.addEventListener('click', enviarPedidoWhatsApp);
+    vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
     categoriaFiltroSelect.addEventListener('change', filtrarProductos);
 
     init();
