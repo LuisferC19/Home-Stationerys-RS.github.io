@@ -1,17 +1,11 @@
-/* ===================================================================
-   ESTILOS COMPLETOS PARA MATERIAL ESCOLAR TEPETITLA
-   Versión: 2.0 (Diseño Profesional)
-   =================================================================== */
-
-/* ===================== VARIABLES DE TEMA ===================== */
 :root {
-    --bg-color: #f4f4f4;
+    --bg-color: #f0f8ff; /* AliceBlue - Un fondo muy claro */
     --card-bg-color: #ffffff;
     --text-color: #333333;
-    --header-bg-color: #c00000; /* Rojo inspirado en Office Depot */
+    --header-bg-color: #5d9b9b; /* Verde azulado pastel */
     --header-text-color: #ffffff;
-    --primary-color: #d10000;
-    --primary-hover-color: #a30000;
+    --primary-color: #6fa8dc; /* Azul pastel principal */
+    --primary-hover-color: #5a8db9; /* Tono más oscuro para hover */
     --shadow-color: rgba(0, 0, 0, 0.08);
     --shadow-hover-color: rgba(0, 0, 0, 0.15);
     --border-color: #e0e0e0;
@@ -22,10 +16,10 @@
     --bg-color: #1e1e1e;
     --card-bg-color: #2d2d2d;
     --text-color: #e0e0e0;
-    --header-bg-color: #d10000;
+    --header-bg-color: #4a7c7c; /* Tono oscuro del header */
     --header-text-color: #ffffff;
-    --primary-color: #e53935;
-    --primary-hover-color: #c00000;
+    --primary-color: #82b9e6; /* Azul pastel más brillante para modo oscuro */
+    --primary-hover-color: #6fa8dc;
     --shadow-color: rgba(0, 0, 0, 0.2);
     --shadow-hover-color: rgba(0, 0, 0, 0.3);
     --border-color: #444444;
