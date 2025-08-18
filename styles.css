@@ -49,7 +49,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif; /* <-- LETRA MEJORADA */
 }
 
 body {
@@ -93,7 +93,7 @@ body {
 }
 
 .header-logo {
-    height: 40px;
+    height: 48px; /* <-- LOGO MÁS GRANDE */
     margin-right: 15px;
 }
 
