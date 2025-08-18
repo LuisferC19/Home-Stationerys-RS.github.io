@@ -1,4 +1,4 @@
-const CACHE_NAME = 'material-tepetitla-v4'; // Versión actualizada
+const CACHE_NAME = 'material-tepetitla-v5';
 const urlsToCache = [
   './',
   './index.html',
@@ -6,6 +6,7 @@ const urlsToCache = [
   './script.js',
   './manifest.json',
   './sw-register.js',
+  './img/HomeStatio.png',
   './img/Audifonos.jpg',
   './img/Calculadora.jpg',
   './img/Cargador-iphone.jpg',
