@@ -143,16 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let total = 0;
         let totalItems = 0;
-        let descuento = 0;
         const MONTO_ENVIO_GRATIS = 100;
 
-        const libretasEnCarrito = appState.carrito.find(item => item.nombre.toLowerCase().includes("libreta"));
-        if (libretasEnCarrito && libretasEnCarrito.cantidad >= 3) {
-            descuento = 15;
-            infoDescuentoP.textContent = '¡Descuento de $15.00 aplicado por combo de libretas!';
-        } else {
-            infoDescuentoP.textContent = '';
-        }
+        // Se limpia el mensaje de descuento
+        infoDescuentoP.textContent = '';
 
         appState.carrito.forEach(item => {
             const itemDiv = document.createElement('div');
@@ -171,15 +165,13 @@ document.addEventListener('DOMContentLoaded', () => {
             totalItems += item.cantidad;
         });
 
-        const totalConDescuento = total - descuento;
-
-        if (totalConDescuento >= MONTO_ENVIO_GRATIS) {
+        if (total >= MONTO_ENVIO_GRATIS) {
             infoEnvioP.textContent = '¡Felicidades! Tu envío es GRATIS.';
         } else {
-            infoEnvioP.textContent = `Te faltan $${(MONTO_ENVIO_GRATIS - totalConDescuento).toFixed(2)} para el envío gratis.`;
+            infoEnvioP.textContent = `Te faltan $${(MONTO_ENVIO_GRATIS - total).toFixed(2)} para el envío gratis.`;
         }
 
-        carritoTotalSpan.textContent = totalConDescuento.toFixed(2);
+        carritoTotalSpan.textContent = total.toFixed(2);
         contadorCarritoSpan.textContent = totalItems;
     }
     
@@ -404,12 +396,10 @@ document.addEventListener('DOMContentLoaded', () => {
             mensaje += `- ${item.nombre} (x${item.cantidad}) - $${(item.precio * item.cantidad).toFixed(2)}\n`;
             total += item.precio * item.cantidad;
         });
-        const libretasEnCarrito = appState.carrito.find(item => item.nombre.toLowerCase().includes("libreta"));
-        if (libretasEnCarrito && libretasEnCarrito.cantidad >= 3) {
-            total -= 15;
-            mensaje += `\nDescuento "Combo Libretas": -$15.00\n`;
-        }
+        
+        // Se elimina la lógica del descuento del mensaje
         mensaje += `\n*Total: $${total.toFixed(2)}*`;
+        
         appState.orderHistory.push({ fecha: new Date().toISOString(), items: [...appState.carrito], total: total });
         saveState('orderHistory');
         appState.carrito = [];
