@@ -60,13 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="https://img.icons8.com/color/24/000000/whatsapp--v1.png" alt="WhatsApp">
                 </button>
                 <a href="producto.html?id=${producto.id}" class="producto-link">
-                    <img src="${producto.imagen}" alt="${producto.nombre}" loading="lazy" class="producto-imagen">
+                    <img src="${producto.imagenes[0]}" alt="${producto.nombre}" loading="lazy" class="producto-imagen">
                     <h3>${producto.nombre}</h3>
                 </a>
                 <p class="precio">$${producto.precio.toFixed(2)}</p>
-                <p class="stock-info">Disponibles: ${producto.stock}</p>
                 <div class="agregar-controls">
-                    <input type="number" class="cantidad-input" value="1" min="1" max="${producto.stock}" aria-label="Cantidad">
+                    <input type="number" class="cantidad-input" value="1" min="1" aria-label="Cantidad">
                     <button class="btn-agregar-carrito" aria-label="Agregar al carrito">Agregar</button>
                 </div>
             `;
@@ -98,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (target.closest('.share-btn')) {
             compartirProducto(id);
         }
-        // El clic en la imagen o título se maneja por el enlace <a> ahora
     });
 
     async function init() {
@@ -161,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             itemDiv.classList.add('carrito-item');
             itemDiv.dataset.id = item.id;
             itemDiv.innerHTML = `
-                <img src="${item.imagen}" alt="${item.nombre}">
+                <img src="${item.imagenes[0]}" alt="${item.nombre}">
                 <div class="carrito-item-info">
                     <h4>${item.nombre}</h4>
                     <p>$${item.precio.toFixed(2)} x ${item.cantidad}</p>
@@ -215,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
             productoCard.classList.add('producto');
             productoCard.innerHTML = `
                 <a href="producto.html?id=${producto.id}" class="producto-link">
-                    <img src="${producto.imagen}" alt="${producto.nombre}" loading="lazy">
+                    <img src="${producto.imagenes[0]}" alt="${producto.nombre}" loading="lazy">
                     <h3>${producto.nombre}</h3>
                 </a>`;
             vistosRecientementeDiv.appendChild(productoCard);
@@ -271,7 +269,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         document.body.appendChild(imgClon);
 
-        // Forzar reflow para que la transición se aplique
         imgClon.offsetHeight; 
 
         imgClon.style.setProperty('--target-top', `${carritoRect.top + carritoRect.height / 2}px`);
@@ -295,22 +292,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const itemEnCarrito = appState.carrito.find(p => p.id === idProducto);
         if (itemEnCarrito) {
-            const nuevaCantidad = itemEnCarrito.cantidad + cantidad;
-            if (nuevaCantidad <= producto.stock) {
-                itemEnCarrito.cantidad = nuevaCantidad;
-                mostrarToast(`${cantidad} x ${producto.nombre} agregado(s).`);
-            } else {
-                mostrarToast(`No puedes agregar más. Solo quedan ${producto.stock - itemEnCarrito.cantidad} disponibles.`, 'error');
-            }
+            itemEnCarrito.cantidad += cantidad;
         } else {
-            if (cantidad <= producto.stock) {
-                appState.carrito.push({ ...producto, cantidad: cantidad });
-                mostrarToast(`${cantidad} x ${producto.nombre} agregado(s) al carrito.`);
-                recomendarProductos(producto.categoria, producto.id);
-            } else {
-                 mostrarToast(`No puedes agregar esa cantidad. Solo hay ${producto.stock} disponibles.`, 'error');
-            }
+            appState.carrito.push({ ...producto, cantidad: cantidad });
+            recomendarProductos(producto.categoria, producto.id);
         }
+        mostrarToast(`${cantidad} x ${producto.nombre} agregado(s) al carrito.`);
         actualizarYGuardarCarrito();
     }
     
@@ -383,9 +370,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function logRecentView(productId) {
-        appState.recentlyViewed = appState.recentlyViewed.filter(id => id !== productId);
-        appState.recentlyViewed.push(productId);
-        if (appState.recentlyViewed.length > 10) appState.recentlyViewed.shift();
+        let recentlyViewed = appState.recentlyViewed.filter(id => id !== productId);
+        recentlyViewed.push(productId);
+        if (recentlyViewed.length > 10) recentlyViewed.shift();
+        appState.recentlyViewed = recentlyViewed;
         saveState('recentlyViewed');
         renderizarVistosRecientemente();
     }
@@ -432,7 +420,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => encuestaContainer.classList.remove('oculto'), 2000);
     }
     
-    // --- Event Listeners ---
     btnMenu.addEventListener('click', () => sidebar.classList.toggle('visible'));
     buscadorInput.addEventListener('input', () => renderizarSugerencias(buscadorInput.value));
     buscadorInput.addEventListener('keyup', filtrarProductos);
