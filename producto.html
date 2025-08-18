@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Detalle del Producto - Home & Stationery</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#5d9b9b" />
+    <style>
+        /* Estilos específicos para la página de detalle */
+        .producto-detalle-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--card-bg-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .producto-detalle-imagen img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .producto-detalle-info h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        .producto-detalle-info .precio {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .producto-detalle-info .descripcion {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .producto-detalle-info .stock-info {
+            margin-bottom: 1.5rem;
+        }
+        .producto-detalle-info .agregar-controls {
+            display: flex;
+            gap: 1rem;
+        }
+         .producto-detalle-info .cantidad-input {
+            width: 70px;
+            padding: 0.75rem;
+            text-align: center;
+        }
+        .producto-detalle-info .btn-agregar-carrito {
+            padding: 0.75rem 1.5rem;
+        }
+        .productos-relacionados {
+            grid-column: 1 / -1; /* Ocupa todo el ancho */
+            margin-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .producto-detalle-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+             <a href="index.html" class="title-container" style="text-decoration: none; color: inherit;">
+                <img src="img/HomeStatio.png" alt="Logo de Home & Stationery" class="header-logo">
+                <h1 class="header-title">Home & Stationery</h1>
+            </a>
+            <div class="header-right-controls">
+                <div class="header-user">
+                    <span id="nombreUsuario">Usuario</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="producto-detalle" class="main-content">
+        </main>
+    
+    <div id="toast" class="toast" role="alert" aria-live="assertive"></div>
+
+    <footer class="footer">
+        <div class="footer-contact">
+            <h3>Contacto Rápido</h3>
+            <p>¿Dudas? ¡Escríbenos!</p>
+            <a href="https://wa.me/522481602590" target="_blank" rel="noopener" class="btn-whatsapp-footer">💬 WhatsApp</a>
+        </div>
+        <div class="footer-map">
+            <h3>Nuestra Ubicación</h3>
+            <p>Tepetitla de Lardizábal, Tlaxcala, México.</p>
+        </div>
+    </footer>
+
+    <script src="producto.js"></script>
+    <script src="sw-register.js"></script>
+</body>
+</html>
