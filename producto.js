@@ -1,121 +1,124 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    const mainContent = document.getElementById('producto-detalle');
     const nombreUsuarioSpan = document.getElementById('nombreUsuario');
     const toastDiv = document.getElementById('toast');
-    let productos = [];
+    
+    // Selectores para los elementos de la página de detalle
+    const nombreEl = document.getElementById('producto-nombre');
+    const precioEl = document.getElementById('producto-precio');
+    const descripcionEl = document.getElementById('producto-descripcion');
+    const imagenPrincipalEl = document.getElementById('imagen-principal');
+    const galeriaThumbnailsEl = document.getElementById('galeria-thumbnails');
+    const catalogoRelacionadosEl = document.getElementById('catalogo-relacionados');
+    const productosRelacionadosContainer = document.getElementById('productos-relacionados');
 
-    async function cargarProducto() {
+    let productos = [];
+    let productoActual = null;
+
+    async function init() {
         try {
-            // Cargar la base de datos de productos
             const response = await fetch('productos.json');
             if (!response.ok) throw new Error('No se pudo cargar la base de datos de productos.');
             productos = await response.json();
 
-            // Obtener el ID del producto de la URL
             const params = new URLSearchParams(window.location.search);
             const productoId = parseInt(params.get('id'));
+            if (!productoId) throw new Error('ID de producto no válido.');
 
-            if (!productoId) throw new Error('No se especificó un ID de producto.');
+            productoActual = productos.find(p => p.id === productoId);
+            if (!productoActual) throw new Error('Producto no encontrado.');
 
-            const producto = productos.find(p => p.id === productoId);
-
-            if (!producto) throw new Error('Producto no encontrado.');
-
-            // Actualizar el título de la página
-            document.title = `${producto.nombre} - Home & Stationery`;
-            
-            // Renderizar el producto
-            renderizarDetalleProducto(producto);
-            
-            // Renderizar productos relacionados
-            renderizarProductosRelacionados(producto.categoria, producto.id);
-
-            // Log de visto recientemente
-            logRecentView(producto.id);
-
+            cargarInfoUsuario();
+            renderizarDetalleProducto();
+            renderizarProductosRelacionados();
+            logRecentView(productoActual.id);
         } catch (error) {
-            console.error('Error al cargar el producto:', error);
-            mainContent.innerHTML = `<p style="text-align: center; padding: 2rem;">${error.message}</p>`;
+            console.error('Error al inicializar la página:', error);
+            nombreEl.textContent = 'Error';
+            descripcionEl.textContent = error.message;
         }
     }
 
-    function renderizarDetalleProducto(producto) {
-        mainContent.innerHTML = `
-            <div class="producto-detalle-container">
-                <div class="producto-detalle-imagen">
-                    <img src="${producto.imagen}" alt="${producto.nombre}">
-                </div>
-                <div class="producto-detalle-info">
-                    <h1>${producto.nombre}</h1>
-                    <p class="precio">$${producto.precio.toFixed(2)}</p>
-                    <p class="descripcion">${producto.descripcion}</p>
-                    <p class="stock-info">Disponibles: ${producto.stock}</p>
-                    <div class="agregar-controls">
-                        <input type="number" id="cantidad-detalle" class="cantidad-input" value="1" min="1" max="${producto.stock}" aria-label="Cantidad">
-                        <button id="btn-agregar-detalle" class="btn-agregar-carrito">Agregar al Carrito</button>
-                    </div>
-                </div>
-                <div id="productos-relacionados" class="productos-relacionados">
-                    <h2>Productos Relacionados</h2>
-                    <div id="catalogo-relacionados" class="catalogo-reducido"></div>
-                </div>
-            </div>
-        `;
+    function cargarInfoUsuario() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.body.dataset.theme = theme;
+        const user = JSON.parse(localStorage.getItem('user')) || { nombre: 'Visitante' };
+        nombreUsuarioSpan.textContent = user.nombre;
+    }
 
-        // Añadir evento al botón de agregar
+    function renderizarDetalleProducto() {
+        document.title = `${productoActual.nombre} - Home & Stationery`;
+        nombreEl.textContent = productoActual.nombre;
+        precioEl.textContent = `$${productoActual.precio.toFixed(2)}`;
+        descripcionEl.textContent = productoActual.descripcion;
+
+        // Configurar galería de imágenes
+        if (productoActual.imagenes && productoActual.imagenes.length > 0) {
+            imagenPrincipalEl.src = productoActual.imagenes[0];
+            imagenPrincipalEl.alt = productoActual.nombre;
+            
+            galeriaThumbnailsEl.innerHTML = '';
+            productoActual.imagenes.forEach((imgSrc, index) => {
+                const thumb = document.createElement('img');
+                thumb.src = imgSrc;
+                thumb.alt = `Vista ${index + 1} de ${productoActual.nombre}`;
+                thumb.classList.add('thumbnail-img');
+                if (index === 0) {
+                    thumb.classList.add('active');
+                }
+                thumb.addEventListener('click', () => {
+                    imagenPrincipalEl.src = imgSrc;
+                    // Actualizar la clase 'active'
+                    galeriaThumbnailsEl.querySelector('.active')?.classList.remove('active');
+                    thumb.classList.add('active');
+                });
+                galeriaThumbnailsEl.appendChild(thumb);
+            });
+        }
+
+        // Configurar botón de agregar
         document.getElementById('btn-agregar-detalle').addEventListener('click', () => {
             const cantidad = parseInt(document.getElementById('cantidad-detalle').value);
-            agregarAlCarrito(producto, cantidad);
+            agregarAlCarrito(productoActual, cantidad);
         });
     }
 
-    function renderizarProductosRelacionados(categoria, idActual) {
-        const catalogoRelacionadosDiv = document.getElementById('catalogo-relacionados');
+    function renderizarProductosRelacionados() {
         const relacionados = productos
-            .filter(p => p.categoria === categoria && p.id !== idActual)
-            .slice(0, 4); // Mostrar hasta 4 relacionados
+            .filter(p => p.categoria === productoActual.categoria && p.id !== productoActual.id)
+            .slice(0, 4);
 
         if (relacionados.length === 0) {
-            document.getElementById('productos-relacionados').style.display = 'none';
+            productosRelacionadosContainer.style.display = 'none';
             return;
         }
         
+        catalogoRelacionadosEl.innerHTML = '';
         relacionados.forEach(producto => {
             const productoCard = document.createElement('div');
             productoCard.classList.add('producto');
             productoCard.innerHTML = `
                 <a href="producto.html?id=${producto.id}" class="producto-link">
-                    <img src="${producto.imagen}" alt="${producto.nombre}" loading="lazy">
+                    <img src="${producto.imagenes[0]}" alt="${producto.nombre}" loading="lazy">
                     <h3>${producto.nombre}</h3>
                     <p class="precio">$${producto.precio.toFixed(2)}</p>
                 </a>
             `;
-            catalogoRelacionadosDiv.appendChild(productoCard);
+            catalogoRelacionadosEl.appendChild(productoCard);
         });
     }
 
     function agregarAlCarrito(producto, cantidad) {
-        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
         const itemEnCarrito = carrito.find(p => p.id === producto.id);
 
         if (itemEnCarrito) {
-            const nuevaCantidad = itemEnCarrito.cantidad + cantidad;
-            if (nuevaCantidad <= producto.stock) {
-                itemEnCarrito.cantidad = nuevaCantidad;
-                mostrarToast(`${cantidad} x ${producto.nombre} agregado(s).`);
-            } else {
-                 mostrarToast(`No puedes agregar más. El total en carrito excedería el stock.`, 'error');
-            }
+            itemEnCarrito.cantidad += cantidad;
         } else {
-             if (cantidad <= producto.stock) {
-                carrito.push({ ...producto, cantidad: cantidad });
-                mostrarToast(`${cantidad} x ${producto.nombre} agregado(s) al carrito.`);
-            } else {
-                 mostrarToast(`No puedes agregar esa cantidad. Solo hay ${producto.stock} disponibles.`, 'error');
-            }
+            carrito.push({ ...producto, cantidad });
         }
+        
         localStorage.setItem('carrito', JSON.stringify(carrito));
+        mostrarToast(`${cantidad} x ${producto.nombre} agregado(s) al carrito.`);
     }
     
     function logRecentView(productId) {
@@ -132,17 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (tipo === 'error') toastDiv.classList.add('error');
         if (tipo === 'info') toastDiv.classList.add('info');
         setTimeout(() => { toastDiv.classList.remove('mostrar'); }, duracion);
-    }
-    
-    function init() {
-        // Cargar tema y nombre de usuario desde localStorage
-        const theme = localStorage.getItem('theme') || 'light';
-        document.body.dataset.theme = theme;
-        
-        const user = JSON.parse(localStorage.getItem('user')) || { nombre: 'Visitante' };
-        nombreUsuarioSpan.textContent = user.nombre;
-
-        cargarProducto();
     }
 
     init();
