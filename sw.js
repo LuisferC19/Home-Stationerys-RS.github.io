@@ -1,9 +1,12 @@
-const CACHE_NAME = 'material-tepetitla-v5';
+const CACHE_NAME = 'material-tepetitla-v6';
 const urlsToCache = [
   './',
   './index.html',
+  './producto.html', // <-- NUEVO
   './styles.css',
   './script.js',
+  './producto.js',  // <-- NUEVO
+  './productos.json',
   './manifest.json',
   './sw-register.js',
   './img/HomeStatio.png',
@@ -25,7 +28,10 @@ self.addEventListener('install', event => {
     caches.open(CACHE_NAME)
     .then(cache => {
         console.log('Cache abierto y archivos añadidos');
-        return cache.addAll(urlsToCache);
+        // El addAll es atómico: si un archivo falla, ninguno se añade.
+        return cache.addAll(urlsToCache).catch(error => {
+            console.error('Fallo al cachear durante la instalación:', error);
+        });
     })
   );
 });
