@@ -13,7 +13,6 @@
         <div class="header-content">
             <button id="btnMenu" aria-label="Abrir menú" class="btn-hamburguesa">☰</button>
             
-            <!-- Contenedor para centrar logo y título -->
             <div class="title-container">
                 <img src="img/HomeStatio.png" alt="Logo de Home & Stationery" class="header-logo">
                 <h1 class="header-title">Home & Stationery</h1>
@@ -83,6 +82,16 @@
     <div id="modalImagen" class="modal oculto" role="dialog" aria-modal="true">
         <span id="cerrarModal" class="cerrar" aria-label="Cerrar imagen">&times;</span>
         <img id="imagenModal" alt="Imagen del producto ampliada" />
+    </div>
+    
+    <div id="modalDescripcion" class="modal oculto" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="descripcionTitulo"></h2>
+                <span id="cerrarDescripcionModal" class="cerrar" aria-label="Cerrar descripción">&times;</span>
+            </div>
+            <p id="descripcionTexto"></p>
+        </div>
     </div>
 
     <div id="modalHistorial" class="modal oculto" role="dialog" aria-modal="true">
