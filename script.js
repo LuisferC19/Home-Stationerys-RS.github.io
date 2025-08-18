@@ -1,43 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Base de datos de productos ---
-    const productos = [
-        // --- PRODUCTOS DE LA LISTA H&S ---
-        // Recuerda cambiar la ruta de la imagen en cada uno de estos productos.
-        { id: 10, nombre: "Libretas Cuadradas Scribe", precio: 23.00, imagen: "img/Libretas.jpg", categoria: "utiles", stock: 50, initialStock: 50 }, // CAMBIAR IMAGEN
-        { id: 11, nombre: "Libretas Cuadradas Perron", precio: 28.00, imagen: "img/Libretas.jpg", categoria: "utiles", stock: 50, initialStock: 50 }, // CAMBIAR IMAGEN
-        { id: 12, nombre: "Libretas Rayadas Perron", precio: 28.00, imagen: "img/Libretas.jpg", categoria: "utiles", stock: 50, initialStock: 50 }, // CAMBIAR IMAGEN
-        { id: 13, nombre: "Libretas Cuadradas Estrella", precio: 20.00, imagen: "img/Libretas.jpg", categoria: "utiles", stock: 50, initialStock: 50 }, // CAMBIAR IMAGEN
-        { id: 14, nombre: "Hojas de Color 50 pz", precio: 45.00, imagen: "img/Plato-ceramica.jpg", categoria: "utiles", stock: 40, initialStock: 40 }, // CAMBIAR IMAGEN
-        { id: 15, nombre: "Hojas Blancas 50 pz", precio: 30.00, imagen: "img/Plato-ceramica.jpg", categoria: "utiles", stock: 40, initialStock: 40 }, // CAMBIAR IMAGEN
-        { id: 16, nombre: "Resistol Dixon", precio: 11.00, imagen: "img/Goma.jpg", categoria: "utiles", stock: 80, initialStock: 80 }, // CAMBIAR IMAGEN
-        { id: 17, nombre: "Plumones de 24 piezas", precio: 60.00, imagen: "img/Lapizero.jpg", categoria: "utiles", stock: 30, initialStock: 30 }, // CAMBIAR IMAGEN
-        { id: 18, nombre: "Plumones de 12 piezas", precio: 35.00, imagen: "img/Lapizero.jpg", categoria: "utiles", stock: 30, initialStock: 30 }, // CAMBIAR IMAGEN
-        { id: 19, nombre: "Lapicero negro Bic", precio: 7.00, imagen: "img/Lapizero.jpg", categoria: "utiles", stock: 100, initialStock: 100 }, // CAMBIAR IMAGEN
-        { id: 20, nombre: "Lapicero Rojo Bic", precio: 7.00, imagen: "img/Lapizero.jpg", categoria: "utiles", stock: 100, initialStock: 100 }, // CAMBIAR IMAGEN
-        { id: 21, nombre: "Lapicero Azul Bic", precio: 7.00, imagen: "img/Lapizero.jpg", categoria: "utiles", stock: 100, initialStock: 100 }, // CAMBIAR IMAGEN
-        { id: 22, nombre: "Lápiz Maped", precio: 6.00, imagen: "img/Lapiz.jpg", categoria: "utiles", stock: 150, initialStock: 150 }, // CAMBIAR IMAGEN
-        { id: 23, nombre: "Sacapuntas", precio: 2.00, imagen: "img/Goma.jpg", categoria: "utiles", stock: 200, initialStock: 200 }, // CAMBIAR IMAGEN
-        { id: 24, nombre: "Corrector Pen de Lápiz", precio: 16.00, imagen: "img/Lapizero.jpg", categoria: "utiles", stock: 60, initialStock: 60 }, // CAMBIAR IMAGEN
-        { id: 25, nombre: "Colores Vividel 12 pz", precio: 55.00, imagen: "img/Lapiz.jpg", categoria: "utiles", stock: 40, initialStock: 40 }, // CAMBIAR IMAGEN
-        { id: 26, nombre: "Goma Factis", precio: 6.00, imagen: "img/Goma.jpg", categoria: "utiles", stock: 100, initialStock: 100 }, // CAMBIAR IMAGEN
-        { id: 27, nombre: "Hojas de Fomi", precio: 5.00, imagen: "img/Plato-ceramica.jpg", categoria: "utiles", stock: 100, initialStock: 100 }, // CAMBIAR IMAGEN
-        { id: 28, nombre: "Juego Geométrico", precio: 35.00, imagen: "img/Calculadora.jpg", categoria: "utiles", stock: 30, initialStock: 30 }, // CAMBIAR IMAGEN
-        { id: 29, nombre: "Figuras de lego", precio: 30.00, imagen: "img/Mochila.jpg", categoria: "otros", stock: 20, initialStock: 20 }, // CAMBIAR IMAGEN
-        { id: 30, nombre: "Lápiz duo", precio: 8.00, imagen: "img/Lapiz.jpg", categoria: "utiles", stock: 100, initialStock: 100 }, // CAMBIAR IMAGEN
-        { id: 31, nombre: "Lápiz bicolor", precio: 8.00, imagen: "img/Lapiz.jpg", categoria: "utiles", stock: 100, initialStock: 100 }, // CAMBIAR IMAGEN
-        { id: 32, nombre: "Audífonos de cable", precio: 25.00, imagen: "img/Audifonos.jpg", categoria: "tecnologia", stock: 40, initialStock: 40 }, // CAMBIAR IMAGEN
-        { id: 33, nombre: "Plumones de pizarrón 3pz", precio: 36.00, imagen: "img/Lapizero.jpg", categoria: "utiles", stock: 30, initialStock: 30 }, // CAMBIAR IMAGEN
-        { id: 34, nombre: "Marca textos 3pz", precio: 30.00, imagen: "img/Lapizero.jpg", categoria: "utiles", stock: 30, initialStock: 30 }, // CAMBIAR IMAGEN
-        { id: 35, nombre: "Soportes para celular", precio: 12.00, imagen: "img/Cargador-iphone.jpg", categoria: "tecnologia", stock: 50, initialStock: 50 }, // CAMBIAR IMAGEN
-        { id: 36, nombre: "Juego de uno", precio: 25.00, imagen: "img/Mochila.jpg", categoria: "otros", stock: 25, initialStock: 25 }, // CAMBIAR IMAGEN
-        { id: 37, nombre: "Pistola de silicón", precio: 40.00, imagen: "img/Calculadora.jpg", categoria: "otros", stock: 20, initialStock: 20 }, // CAMBIAR IMAGEN
-        { id: 38, nombre: "Mini engrapadora", precio: 30.00, imagen: "img/Calculadora.jpg", categoria: "utiles", stock: 30, initialStock: 30 }, // CAMBIAR IMAGEN
-        { id: 39, nombre: "Cinta adhesiva", precio: 5.00, imagen: "img/Goma.jpg", categoria: "utiles", stock: 100, initialStock: 100 }, // CAMBIAR IMAGEN
-        { id: 40, nombre: "Forro adhesivo 1 metro", precio: 11.00, imagen: "img/Plato-ceramica.jpg", categoria: "utiles", stock: 80, initialStock: 80 } // CAMBIAR IMAGEN
-    ];
+    let productos = [];
 
-    // --- Estado de la aplicación ---
     const appState = {
         carrito: JSON.parse(localStorage.getItem('carrito')) || [],
         user: JSON.parse(localStorage.getItem('user')) || { nombre: 'Visitante' },
@@ -47,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         savedCarts: JSON.parse(localStorage.getItem('savedCarts')) || [],
     };
     
-    // --- Selectores del DOM ---
     const catalogoDiv = document.getElementById('catalogo');
     const abrirCarritoBtn = document.getElementById('abrirCarrito');
     const cerrarCarritoBtn = document.getElementById('cerrarCarritoBtn');
@@ -81,9 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const infoDescuentoP = document.getElementById('infoDescuento');
     const infoEnvioP = document.getElementById('infoEnvio');
     const encuestaContainer = document.getElementById('encuestaContainer');
+    const modalDescripcion = document.getElementById('modalDescripcion');
+    const cerrarDescripcionModalBtn = document.getElementById('cerrarDescripcionModal');
+    const descripcionTitulo = document.getElementById('descripcionTitulo');
+    const descripcionTexto = document.getElementById('descripcionTexto');
 
 
-    // --- Renderiza los productos en el catálogo ---
     function renderizarProductos(productosAMostrar) {
         catalogoDiv.innerHTML = '';
         if (productosAMostrar.length === 0) {
@@ -100,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="share-btn" aria-label="Compartir por WhatsApp">
                     <img src="https://img.icons8.com/color/24/000000/whatsapp--v1.png" alt="WhatsApp">
                 </button>
-                <img src="${producto.imagen}" alt="${producto.nombre}" class="imagen-producto" loading="lazy">
+                <img src="${producto.imagen}" alt="${producto.nombre}" loading="lazy">
                 <h3>${producto.nombre}</h3>
                 <p class="precio">$${producto.precio.toFixed(2)}</p>
                 <p class="stock-info">Disponibles: ${producto.stock}</p>
@@ -110,22 +76,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // --- Comparte un producto por WhatsApp ---
     function compartirProducto(idProducto) {
         const producto = productos.find(p => p.id === idProducto);
-        const text = `¡Mira este producto en Material Escolar Tepetitla: ${producto.nombre} por solo $${producto.precio.toFixed(2)}!`;
+        const text = `¡Mira este producto en Home & Stationery: ${producto.nombre} por solo $${producto.precio.toFixed(2)}!`;
         const pageUrl = window.location.href;
         
         const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + pageUrl)}`;
         window.open(url, '_blank');
     }
 
-    // --- Controla el menú lateral en móviles ---
     btnMenu.addEventListener('click', () => {
         sidebar.classList.toggle('visible');
     });
 
-    // --- Maneja los clics en el catálogo ---
     catalogoDiv.addEventListener('click', e => {
         const productoCard = e.target.closest('.producto');
         if (!productoCard) return;
@@ -134,36 +97,45 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (e.target.classList.contains('btn-agregar-carrito')) {
             agregarAlCarrito(id);
-        } else if (e.target.classList.contains('imagen-producto')) {
-            logRecentView(id);
         } else if (e.target.closest('.share-btn')) {
             compartirProducto(id);
+        } else {
+            mostrarDescripcion(id);
+            logRecentView(id);
         }
     });
 
-    // --- Inicializa la aplicación ---
-    function init() {
-        document.body.dataset.theme = appState.theme;
-        themeToggleBtn.textContent = appState.theme === 'light' ? '🌙' : '☀️';
+    async function init() {
+        try {
+            const response = await fetch('productos.json');
+            if (!response.ok) throw new Error('No se pudo cargar la lista de productos.');
+            productos = await response.json();
+            
+            document.body.dataset.theme = appState.theme;
+            themeToggleBtn.textContent = appState.theme === 'light' ? '🌙' : '☀️';
 
-        if (appState.user.nombre === 'Visitante') {
-            setTimeout(() => {
-                const nombre = prompt("¡Bienvenido a la papelería! ¿Cuál es tu nombre?");
-                if (nombre && nombre.trim()) {
-                    appState.user.nombre = nombre.trim();
-                    saveState('user');
-                    nombreUsuarioSpan.textContent = appState.user.nombre;
-                }
-            }, 500);
+            if (appState.user.nombre === 'Visitante') {
+                setTimeout(() => {
+                    const nombre = prompt("¡Bienvenido a la papelería! ¿Cuál es tu nombre?");
+                    if (nombre && nombre.trim()) {
+                        appState.user.nombre = nombre.trim();
+                        saveState('user');
+                        nombreUsuarioSpan.textContent = appState.user.nombre;
+                    }
+                }, 500);
+            }
+            nombreUsuarioSpan.textContent = appState.user.nombre;
+            
+            renderizarProductos(productos);
+            renderizarCarrito();
+            renderizarVistosRecientemente();
+
+        } catch (error) {
+            console.error(error);
+            catalogoDiv.innerHTML = "<p>Error al cargar los productos. Por favor, intenta de nuevo más tarde.</p>";
         }
-        nombreUsuarioSpan.textContent = appState.user.nombre;
-        
-        renderizarProductos(productos);
-        renderizarCarrito();
-        renderizarVistosRecientemente();
     }
     
-    // --- Renderiza el contenido del carrito ---
     function renderizarCarrito() {
         contenidoCarritoDiv.innerHTML = '';
         if (appState.carrito.length === 0) {
@@ -217,7 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
         contadorCarritoSpan.textContent = totalItems;
     }
     
-    // --- Muestra sugerencias de búsqueda ---
     function renderizarSugerencias(query) {
         searchSuggestionsDiv.innerHTML = '';
         if (!query) return;
@@ -235,10 +206,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Muestra productos vistos recientemente ---
     function renderizarVistosRecientemente() {
         vistosRecientementeDiv.innerHTML = '';
-        if (appState.recentlyViewed.length === 0) {
+        if (appState.recentlyViewed.length === 0 || productos.length === 0) {
             document.getElementById('productosVistos').style.display = 'none';
             return;
         }
@@ -252,7 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Muestra el historial de pedidos ---
     function renderizarHistorial() {
         contenidoHistorialDiv.innerHTML = '';
         let totalGastado = 0;
@@ -273,7 +242,6 @@ document.addEventListener('DOMContentLoaded', () => {
         totalGastadoSpan.textContent = totalGastado.toFixed(2);
     }
 
-    // --- Muestra los carritos guardados ---
     function renderizarCarritosGuardados() {
         contenidoCarritosGuardadosDiv.innerHTML = '';
         if (appState.savedCarts.length === 0) {
@@ -288,8 +256,15 @@ document.addEventListener('DOMContentLoaded', () => {
             contenidoCarritosGuardadosDiv.appendChild(carritoDiv);
         });
     }
+    
+    function mostrarDescripcion(idProducto) {
+        const producto = productos.find(p => p.id === idProducto);
+        if (!producto) return;
+        descripcionTitulo.textContent = producto.nombre;
+        descripcionTexto.textContent = producto.descripcion || 'Este producto no tiene una descripción disponible.';
+        modalDescripcion.classList.remove('oculto');
+    }
 
-    // --- Agrega un producto al carrito ---
     function agregarAlCarrito(idProducto) {
         const producto = productos.find(p => p.id === idProducto);
         const itemEnCarrito = appState.carrito.find(p => p.id === idProducto);
@@ -308,7 +283,6 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarYGuardarCarrito();
     }
     
-    // --- Recomienda productos similares ---
     function recomendarProductos(categoria, excludeId) {
         const recomendados = productos.filter(p => p.categoria === categoria && p.id !== excludeId);
         if (recomendados.length > 0) {
@@ -317,14 +291,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Elimina un producto del carrito ---
     function eliminarDelCarrito(idProducto) {
         appState.carrito = appState.carrito.filter(item => item.id !== idProducto);
         mostrarToast('Producto eliminado del carrito.');
         actualizarYGuardarCarrito();
     }
     
-    // --- Guarda el carrito actual para más tarde ---
     function guardarCarritoActual() {
         if(appState.carrito.length === 0) {
             mostrarToast('El carrito está vacío.', 'error');
@@ -337,7 +309,6 @@ document.addEventListener('DOMContentLoaded', () => {
         mostrarToast('Carrito guardado. Puedes continuar comprando.');
     }
 
-    // --- Recupera un carrito guardado ---
     function recuperarCarrito(index) {
         if(appState.carrito.length > 0 && !confirm('Tienes productos en tu carrito actual. ¿Deseas reemplazarlos?')) return;
         appState.carrito = appState.savedCarts[index];
@@ -348,7 +319,6 @@ document.addEventListener('DOMContentLoaded', () => {
         mostrarToast('Carrito recuperado exitosamente.');
     }
     
-    // --- Filtra productos por texto y categoría ---
     function filtrarProductos() {
         const texto = buscadorInput.value.toLowerCase();
         const categoria = categoriaFiltroSelect.value;
@@ -360,18 +330,15 @@ document.addEventListener('DOMContentLoaded', () => {
         renderizarProductos(productosFiltrados);
     }
     
-    // --- Guarda una parte del estado en localStorage ---
     function saveState(key) {
         localStorage.setItem(key, JSON.stringify(appState[key]));
     }
 
-    // --- Actualiza el carrito y lo guarda ---
     function actualizarYGuardarCarrito() {
         renderizarCarrito();
         saveState('carrito');
     }
     
-    // --- Registra un producto como visto recientemente ---
     function logRecentView(productId) {
         appState.recentlyViewed = appState.recentlyViewed.filter(id => id !== productId);
         appState.recentlyViewed.push(productId);
@@ -380,7 +347,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderizarVistosRecientemente();
     }
 
-    // --- Muestra una notificación (toast) ---
     function mostrarToast(mensaje, tipo = 'success', duracion = 3000) {
         toastDiv.textContent = mensaje;
         toastDiv.className = 'toast mostrar';
@@ -389,7 +355,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => { toastDiv.classList.remove('mostrar'); }, duracion);
     }
 
-    // --- Cambia entre tema claro y oscuro ---
     function toggleTheme() {
         appState.theme = appState.theme === 'light' ? 'dark' : 'light';
         document.body.dataset.theme = appState.theme;
@@ -397,7 +362,6 @@ document.addEventListener('DOMContentLoaded', () => {
         saveState('theme');
     }
 
-    // --- Envía el pedido por WhatsApp ---
     function enviarPedidoWhatsApp() {
         if (appState.carrito.length === 0) {
             mostrarToast('Tu carrito está vacío.', 'error');
@@ -425,7 +389,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => encuestaContainer.classList.remove('oculto'), 2000);
     }
     
-    // --- Event Listeners ---
     buscadorInput.addEventListener('input', () => renderizarSugerencias(buscadorInput.value));
     buscadorInput.addEventListener('keyup', filtrarProductos);
     themeToggleBtn.addEventListener('click', toggleTheme);
@@ -440,6 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
     abrirCarritoBtn.addEventListener('click', () => carritoFlotante.classList.add('abierto'));
     cerrarCarritoBtn.addEventListener('click', () => carritoFlotante.classList.remove('abierto'));
     cerrarModalBtn.addEventListener('click', () => modalImagen.classList.add('oculto'));
+    cerrarDescripcionModalBtn.addEventListener('click', () => modalDescripcion.classList.add('oculto'));
     enviarPedidoBtn.addEventListener('click', enviarPedidoWhatsApp);
     categoriaFiltroSelect.addEventListener('change', filtrarProductos);
 
