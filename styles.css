@@ -10,6 +10,8 @@
     --shadow-hover-color: rgba(0, 0, 0, 0.15);
     --border-color: #e0e0e0;
     --sidebar-bg-color: #ffffff;
+    --danger-color: #e57373;
+    --danger-hover-color: #d32f2f;
 }
 
 [data-theme="dark"] {
@@ -24,6 +26,30 @@
     --shadow-hover-color: rgba(0, 0, 0, 0.3);
     --border-color: #444444;
     --sidebar-bg-color: #252525;
+    --danger-color: #ef9a9a;
+    --danger-hover-color: #e57373;
+}
+
+/* --- ANIMACIÓN DE VUELO AL CARRITO --- */
+@keyframes fly-to-cart {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+}
+
+.producto-imagen-volando {
+    position: fixed;
+    z-index: 1500;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    pointer-events: none;
+    animation: fly-to-cart 0.8s ease-in-out forwards;
 }
 
 * {
@@ -205,8 +231,14 @@ body {
     flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
-    cursor: pointer;
 }
+
+.producto-link {
+    text-decoration: none;
+    color: inherit;
+    display: contents; /* Hace que el link no afecte el layout flex */
+}
+
 
 .producto:hover {
     transform: translateY(-5px);
@@ -220,7 +252,7 @@ body {
     margin-bottom: 1rem;
     border-radius: 4px;
     background-color: #fff;
-    pointer-events: none;
+    cursor: pointer;
 }
 
 .producto h3 {
@@ -230,7 +262,7 @@ body {
     margin-bottom: 0.5rem;
     min-height: 44px;
     line-height: 1.3;
-    pointer-events: none;
+    cursor: pointer;
 }
 
 .producto .precio {
@@ -238,16 +270,31 @@ body {
     font-size: 1.4rem;
     color: var(--primary-color);
     margin-bottom: 0.75rem;
-    pointer-events: none;
 }
 
 .producto .stock-info {
     font-size: 0.85rem;
     color: #666;
     margin-bottom: 1rem;
-    pointer-events: none;
 }
 [data-theme="dark"] .producto .stock-info { color: #aaa; }
+
+.producto .agregar-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: auto; /* Empuja los controles hacia abajo */
+}
+
+.producto .cantidad-input {
+    width: 60px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
 
 .producto button.btn-agregar-carrito {
     background-color: var(--primary-color);
@@ -258,9 +305,8 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    width: 100%;
+    flex-grow: 1; /* El botón ocupa el espacio restante */
     transition: background-color 0.2s ease;
-    margin-top: auto;
 }
 
 .producto button.btn-agregar-carrito:hover {
@@ -405,9 +451,13 @@ body {
     transition: opacity 0.2s;
 }
 .carrito-footer button:hover { opacity: 0.85; }
+
 #enviarPedidoBtn { background-color: #25d366; color: white; }
 #guardarCarritoBtn { background-color: #555; color: white; }
 [data-theme="dark"] #guardarCarritoBtn { background-color: #777; }
+#vaciarCarritoBtn { background-color: transparent; color: var(--danger-color); border: 2px solid var(--danger-color); }
+#vaciarCarritoBtn:hover { background-color: var(--danger-color); color: white; }
+
 
 .modal {
     position: fixed;
@@ -423,11 +473,6 @@ body {
 }
 .modal.oculto { display: none; }
 
-#modalImagen img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-}
 .cerrar {
     position: absolute;
     top: 20px;
