@@ -2,13 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Base de datos de productos ---
     const productos = [
-        // Productos existentes
-        { id: 1, nombre: "Audífonos Inalámbricos", precio: 350, imagen: "img/Audifonos.jpg", categoria: "tecnologia", stock: 15, initialStock: 15 },
-        { id: 2, nombre: "Calculadora Científica", precio: 280, imagen: "img/Calculadora.jpg", categoria: "utiles", stock: 25, initialStock: 25 },
-        { id: 3, nombre: "Cargador de iPhone", precio: 250, imagen: "img/Cargador-iphone.jpg", categoria: "tecnologia", stock: 20, initialStock: 20 },
-        { id: 8, nombre: "Mochila Escolar", precio: 450, imagen: "img/Mochila.jpg", categoria: "otros", stock: 10, initialStock: 10 },
-        
-        // --- NUEVOS PRODUCTOS DE LA LISTA ---
+        // --- PRODUCTOS DE LA LISTA H&S ---
         // Recuerda cambiar la ruta de la imagen en cada uno de estos productos.
         { id: 10, nombre: "Libretas Cuadradas Scribe", precio: 23.00, imagen: "img/Libretas.jpg", categoria: "utiles", stock: 50, initialStock: 50 }, // CAMBIAR IMAGEN
         { id: 11, nombre: "Libretas Cuadradas Perron", precio: 28.00, imagen: "img/Libretas.jpg", categoria: "utiles", stock: 50, initialStock: 50 }, // CAMBIAR IMAGEN
