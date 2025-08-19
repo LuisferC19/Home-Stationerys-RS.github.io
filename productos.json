@@ -3,7 +3,7 @@
     "id": 1,
     "nombre": "Audífonos de cable",
     "precio": 25.00,
-    "imagenes": ["img/AudifonosCable2.jpeg", "img/AudifonosCable3.jpg", "img/FaltaImg.png"],
+    "imagenes": ["img/AudifonosCable2.jpg", "img/AudifonosCable3.jpg", "img/FaltaImg.png"],
     "categoria": "tecnologia",
     "descripcion": "Audífonos alámbricos con entrada de 3.5mm, sonido claro y micrófono integrado."
   },
@@ -59,7 +59,7 @@
     "id": 8,
     "nombre": "Hojas de Color 50 pz",
     "precio": 45.00,
-    "imagenes": ["img/HojasDForm1.jpg", "img/HojasDForm2.jpg", "img/FaltaImg.png"],
+    "imagenes": ["img/HojasColor1.jpg", "img/FaltaImg.png", "img/FaltaImg.png"],
     "categoria": "utiles",
     "descripcion": "Paquete con 50 hojas de colores surtidos tamaño carta, ideal para manualidades."
   },
@@ -67,7 +67,7 @@
     "id": 9,
     "nombre": "Hojas de Fomi",
     "precio": 5.00,
-    "imagenes": ["img/HojasDForm1.jpg", "img/HojasDForm2.jpg", "img/FaltaImg.png"],
+    "imagenes": ["img/HojasDFomi1.jpg", "img/HojasDFomi2.jpg", "img/FaltaImg.png"],
     "categoria": "utiles",
     "descripcion": "Pliego de fomi tamaño carta en diversos colores para manualidades."
   },
@@ -99,7 +99,7 @@
     "id": 13,
     "nombre": "Lápiz duo",
     "precio": 8.00,
-    "imagenes": ["img/FaltaImg.png", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/LapizDuo2.jpg", "img/FaltaImg.png", "img/FaltaImg.png"],
     "categoria": "utiles",
     "descripcion": "Lápiz con dos puntas, una de grafito y otra de color rojo."
   },
@@ -107,7 +107,7 @@
     "id": 14,
     "nombre": "Lápiz Maped",
     "precio": 6.00,
-    "imagenes": ["img/LapizMaped1.jpg", "img/LapizMaped2.jpg", "img/LapizMaped3.jpg"],
+    "imagenes": ["img/LapizMaped2.jpg", "img/LapizMaped3.jpg", "img/FaltaImg.png"],
     "categoria": "utiles",
     "descripcion": "Lápiz de grafito #2 con cuerpo triangular para un mejor agarre. Incluye goma."
   },
