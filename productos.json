@@ -3,7 +3,7 @@
     "id": 1,
     "nombre": "Audífonos de cable",
     "precio": 25.00,
-    "imagenes": ["img/AudifonosCable2.jpg", "img/AudifonosCable3.jpg", "img/FaltaImg.png"],
+    "imagenes": ["img/AudifonosCable2.jpeg", "img/AudifonosCable3.jpg", "img/FaltaImg.png"],
     "categoria": "tecnologia",
     "descripcion": "Audífonos alámbricos con entrada de 3.5mm, sonido claro y micrófono integrado."
   },
