@@ -44,8 +44,8 @@ const urlsToCache = [
   './img/MarcaTexto2.jpg',
   './img/MarcaTexto3.jpg',
   './img/MiniEngrapadoras1.jpg',
-  './img/Plumonesloca241.jpg',
-  './img/Plumonesloca243.jpg',
+  './img/Plumonesjocar241.jpg',
+  './img/Plumonesjocar243.jpg',
   './img/PlumonesWhiteBoard2.jpg',
   './img/PlumonesWhiteBoard3.jpg',
   './img/ResitolDixon1.jpg',
@@ -90,3 +90,4 @@ self.addEventListener('fetch', event => {
     })
   );
 });
+
