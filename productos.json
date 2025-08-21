@@ -195,7 +195,7 @@
     "id": 25,
     "nombre": "Plumones de 24 piezas",
     "precio": 60.00,
-    "imagenes": ["img/Plumonesloca241.jpg", "img/Plumonesloca243.jpg", "img/FaltaImg.png"],
+    "imagenes": ["img/Plumonesjocar241.jpg", "img/Plumonesjocar243.jpg", "img/FaltaImg.png"],
     "categoria": "utiles",
     "descripcion": "Set de 24 plumones de punta fina con colores vivos y de larga duración."
   },
