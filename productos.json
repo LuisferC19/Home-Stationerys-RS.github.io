@@ -11,7 +11,7 @@
     "id": 2,
     "nombre": "Soportes para celular",
     "precio": 12.00,
-    "imagenes": ["img/PortaCelulares1.jpg", "img/PortaCelulares2.jpg", "img/PortaCelulares3.jpg"],
+    "imagenes": ["img/PortaCelulares1.jpg"],
     "categoria": "tecnologia",
     "descripcion": "Soporte de plástico plegable para celular, ideal para ver videos o videollamadas."
   },
