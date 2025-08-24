@@ -14,12 +14,9 @@ const urlsToCache = [
   './icon-512.png',
   './img/FaltaImg.png',
 
-  // --- Imágenes de productos que SÍ existen (Lista completa) ---
   './img/AudifonosCable2.jpg',
   './img/AudifonosCable3.jpg',
   './img/PortaCelulares1.jpg',
-  './img/PortaCelulares2.jpg',
-  './img/PortaCelulares3.jpg',
   './img/CintaAdesiva1.jpg',
   './img/CintaAdesiva2.jpg',
   './img/CintaAdesiva3.jpg',
@@ -90,5 +87,6 @@ self.addEventListener('fetch', event => {
     })
   );
 });
+
 
 
