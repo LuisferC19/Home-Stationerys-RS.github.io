@@ -37,8 +37,8 @@ const urlsToCache = [
   './img/LibretaRayadaPerron1.png', './img/LibretaRayadaPerron2.png',
   './img/MarcaTextos1.png', './img/MarcaTextos2.png', './img/MarcaTextos3.png',
   './img/MiniEngrapadoras1.png', './img/MiniEngrapadoras2.png', './img/MiniEngrapadoras3.png',
-  './img/Plumoneslocar121.png', './img/Plumoneslocar122.png', './img/Plumoneslocar123.png',
-  './img/Plumoneslocar241.png', './img/Plumoneslocar242.png', './img/Plumoneslocar243.png',
+  './img/PlumonesJocar121.png', './img/PlumonesJocar122.png', './img/PlumonesJocar123.png',
+  './img/PlumonesJocar241.png', './img/PlumonesJocar242.png', './img/PlumonesJocar243.png',
   './img/PlumonesWhiteboard1.png', './img/PlumonesWhiteboard2.png', './img/PlumonesWhiteboard3.png',
   './img/ResistolDixon1.png', './img/ResistolDixon2.png', './img/ResistolDixon3.png',
   './img/Sacapuntas1.png', './img/Sacapuntas2.png', './img/Sacapuntas3.png',
@@ -82,3 +82,4 @@ self.addEventListener('fetch', event => {
     })
   );
 });
+
