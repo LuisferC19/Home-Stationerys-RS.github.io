@@ -10,7 +10,7 @@ const urlsToCache = [
   './productos.json',
   './manifest.json',
   './sw-register.js',
-  './img/HomeStatio.png',
+  './img/HomeStationery.png',
   './icon-192.png',
   './icon-512.png',
   './img/FaltaImg.png',
@@ -82,4 +82,5 @@ self.addEventListener('fetch', event => {
     })
   );
 });
+
 
