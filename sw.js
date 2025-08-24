@@ -1,4 +1,5 @@
-const CACHE_NAME = 'material-tepetitla-v8'; // Incrementé la versión para forzar la actualización
+// Se incrementa la versión para forzar la actualización del caché en los navegadores de los usuarios
+const CACHE_NAME = 'material-tepetitla-v9'; 
 const urlsToCache = [
   './',
   './index.html',
@@ -14,46 +15,38 @@ const urlsToCache = [
   './icon-512.png',
   './img/FaltaImg.png',
 
-  './img/AudifonosCable2.jpg',
-  './img/AudifonosCable3.jpg',
-  './img/PortaCelulares1.jpg',
-  './img/CintaAdesiva1.jpg',
-  './img/CintaAdesiva2.jpg',
-  './img/CintaAdesiva3.jpg',
-  './img/ColoresVividel2.jpg',
-  './img/ColoresVividel3.jpg',
-  './img/Corrector2.jpg',
-  './img/Corrector3.jpg',
-  './img/PapelContac1.jpg',
-  './img/PapelContac2.jpg',
-  './img/GomaFactis1.jpg',
-  './img/GomaFactis2.jpg',
-  './img/GomaFactis3.jpg',
-  './img/HojasColor1.jpg',
-  './img/HojasDFomi1.jpg',
-  './img/HojasDFomi2.jpg',
-  './img/JuegoGeometrico1.jpg',
-  './img/LapizBicolor2.jpg',
-  './img/LapizDuo2.jpg',
-  './img/LapizMaped2.jpg',
-  './img/LapizMaped3.jpg',
-  './img/MarcaTexto1.jpg',
-  './img/MarcaTexto2.jpg',
-  './img/MarcaTexto3.jpg',
-  './img/MiniEngrapadoras1.jpg',
-  './img/PlumonesJocar241.jpg',
-  './img/PlumonesJocar243.jpg',
-  './img/PlumonesWhiteBoard2.jpg',
-  './img/PlumonesWhiteBoard3.jpg',
-  './img/ResitolDixon1.jpg',
-  './img/ResitolDixon2.jpg',
-  './img/ResitolDixon3.jpg',
-  './img/Sacapuntas1.jpg',
-  './img/Sacapuntas3.jpg',
-  './img/FiguraDLego1.jpg',
-  './img/JuegoUno3.jpg',
-  './img/PistolaSilicon1.jpg',
-  './img/PistolaSilicon2.jpg'
+  // --- Lista completa y actualizada de imágenes de productos ---
+  './img/AudifonosCable1.png', './img/AudifonosCable2.png', './img/AudifonosCable3.png',
+  './img/SoporteCelulares1.png', './img/SoporteCelulares2.png', './img/SoporteCelulares3.png',
+  './img/CintaAdesiva1.png', './img/CintaAdesiva2.png', './img/CintaAdesiva3.png',
+  './img/ColoresVividel1.png', './img/ColoresVividel2.png', './img/ColoresVividel3.png',
+  './img/CorrectorPen1.png', './img/CorrectorPen2.png', './img/CorrectorPen3.png',
+  './img/PapelContac1.png', './img/PapelContac2.png', './img/PapelContac3.png',
+  './img/GomasFactis1.png', './img/GomasFactis2.png', './img/GomasFactis3.png',
+  './img/HojasFomi1.png', './img/HojasFomi2.png',
+  './img/JuegoGeometrico1.png',
+  './img/LapizBicolor1.png', './img/LapizBicolor2.png', './img/LapizBicolor3.png',
+  './img/LapizDuo1.png', './img/LapizDuo2.png', './img/LapizDuo3.png',
+  './img/LapizMaped1.png', './img/LapizMaped2.png', './img/LapizMaped3.png',
+  './img/LapiceroAzulBic1.png', './img/LapiceroAzulBic2.png', './img/LapiceroAzulBic3.png',
+  './img/LapiceroNegroBic1.png', './img/LapiceroNegroBic2.png', './img/LapiceroNegroBic3.png',
+  './img/LapiceroRojoBic1.png', './img/LapiceroRojoBic2.png', './img/LapiceroRojoBic3.png',
+  './img/LibretaCuadradaEstrella1.png', './img/LibretaCuadradaEstrella2.png',
+  './img/LibretaCuadradaPerron1.png', './img/LibretaCuadradaPerron2.png', './img/LibretaCuadradaPerron3.png',
+  './img/LibretaCuadriculadaScribe1.png', './img/LibretaCuadriculadaScribe2.png', './img/LibretaCuadriculadaScribe3.png',
+  './img/LibretaRayadaPerron1.png', './img/LibretaRayadaPerron2.png',
+  './img/MarcaTextos1.png', './img/MarcaTextos2.png', './img/MarcaTextos3.png',
+  './img/MiniEngrapadoras1.png', './img/MiniEngrapadoras2.png', './img/MiniEngrapadoras3.png',
+  './img/Plumoneslocar121.png', './img/Plumoneslocar122.png', './img/Plumoneslocar123.png',
+  './img/Plumoneslocar241.png', './img/Plumoneslocar242.png', './img/Plumoneslocar243.png',
+  './img/PlumonesWhiteboard1.png', './img/PlumonesWhiteboard2.png', './img/PlumonesWhiteboard3.png',
+  './img/ResistolDixon1.png', './img/ResistolDixon2.png', './img/ResistolDixon3.png',
+  './img/Sacapuntas1.png', './img/Sacapuntas2.png', './img/Sacapuntas3.png',
+  './img/JuegosLegos1.png',
+  './img/JuegoUno1.png', './img/JuegoUno3.png',
+  './img/PistolaSilicon1.png', './img/PistolaSilicon2.png', './img/PistolaSilicon3.png',
+  './img/BarrasSilicon1.png', './img/BarrasSilicon2.png', './img/BarrasSilicon3.png',
+  './img/Impermiable1.png'
 ];
 
 self.addEventListener('install', event => {
@@ -61,8 +54,9 @@ self.addEventListener('install', event => {
     caches.open(CACHE_NAME)
     .then(cache => {
         console.log('Cache abierto y archivos añadidos');
+        // Usar un catch para evitar que un solo error de imagen rompa toda la instalación
         return cache.addAll(urlsToCache).catch(error => {
-            console.error('Fallo al cachear durante la instalación:', error);
+            console.error('Fallo al cachear algunos archivos durante la instalación:', error);
         });
     })
   );
@@ -83,10 +77,8 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
     .then(resp => {
+        // Devuelve la respuesta del caché si existe, si no, la busca en la red
         return resp || fetch(event.request);
     })
   );
 });
-
-
-
