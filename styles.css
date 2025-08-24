@@ -30,11 +30,6 @@
     --danger-hover-color: #e57373;
 }
 
-@keyframes fly-to-cart {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(0.1); opacity: 0; }
-}
-
 .producto-imagen-volando {
     position: fixed;
     z-index: 1500;
@@ -42,8 +37,17 @@
     background-color: #fff;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     pointer-events: none;
-    animation: fly-to-cart 0.8s ease-in-out forwards;
+    /* Transición para animar el cambio de posición (top, left) y tamaño (transform) */
+    transition: top 0.8s ease-in, left 0.8s ease-in, transform 0.8s ease-in-out; 
+    animation: fly-to-cart-opacity 0.8s ease-in-out forwards;
 }
+
+/* Se separa la animación de opacidad para no interferir con la transición de posición */
+@keyframes fly-to-cart-opacity {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.1); }
+}
+
 
 * {
     margin: 0;
