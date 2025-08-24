@@ -41,7 +41,7 @@
   },
   {
     "id": 6,
-    "nombre": "Forro adhesivo 1 metro",
+    "nombre": "Forro adhesivo Contac 1 metro",
     "precio": 11.00,
     "imagenes": ["img/PapelContac1.png", "img/PapelContac2.png", "img/PapelContac3.png"],
     "categoria": "utiles",
@@ -137,7 +137,7 @@
   },
   {
     "id": 18,
-    "nombre": "Libretas Cuadradas Estrella",
+    "nombre": "Libretas Cuadriculada Estrella",
     "precio": 20.00,
     "imagenes": ["img/LibretaCuadradaEstrella1.png", "img/LibretaCuadradaEstrella2.png", "img/FaltaImg.png"],
     "categoria": "utiles",
@@ -145,7 +145,7 @@
   },
   {
     "id": 19,
-    "nombre": "Libretas Cuadradas Perron",
+    "nombre": "Libretas Cuadriculada Perron",
     "precio": 28.00,
     "imagenes": ["img/LibretaCuadradaPerron1.png", "img/LibretaCuadradaPerron2.png", "img/LibretaCuadradaPerron3.png"],
     "categoria": "utiles",
@@ -153,7 +153,7 @@
   },
   {
     "id": 20,
-    "nombre": "Libretas Cuadradas Scribe",
+    "nombre": "Libretas Cuadriculada Scribe",
     "precio": 23.00,
     "imagenes": ["img/LibretaCuadriculadaScribe1.png", "img/LibretaCuadriculadaScribe2.png", "img/LibretaCuadriculadaScribe3.png"],
     "categoria": "utiles",
@@ -185,23 +185,23 @@
   },
   {
     "id": 24,
-    "nombre": "Plumones de 12 piezas",
+    "nombre": "Plumones Jocar de 12 piezas",
     "precio": 35.00,
-    "imagenes": ["img/Plumoneslocar121.png", "img/Plumoneslocar122.png", "img/Plumoneslocar123.png"],
+    "imagenes": ["img/PlumonesJocar121.png", "img/PlumonesJocar122.png", "img/PlumonesJocar123.png"],
     "categoria": "utiles",
     "descripcion": "Paquete básico de 12 plumones de colores brillantes, no tóxicos."
   },
   {
     "id": 25,
-    "nombre": "Plumones de 24 piezas",
+    "nombre": "Plumones Jocar de 24 piezas",
     "precio": 60.00,
-    "imagenes": ["img/Plumoneslocar241.png", "img/Plumoneslocar242.png", "img/Plumoneslocar243.png"],
+    "imagenes": ["img/PlumonesJocar241.png", "img/PlumonesJocar242.png", "img/PlumonesJocar243.png"],
     "categoria": "utiles",
     "descripcion": "Set de 24 plumones de punta fina con colores vivos y de larga duración."
   },
   {
     "id": 26,
-    "nombre": "Plumones de pizarrón 3pz",
+    "nombre": "Plumones Whiteboard de pizarrón 3pz",
     "precio": 36.00,
     "imagenes": ["img/PlumonesWhiteboard1.png", "img/FaltaImg.png", "img/PlumonesWhiteboard3.png"],
     "categoria": "utiles",
