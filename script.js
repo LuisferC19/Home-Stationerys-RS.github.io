@@ -75,11 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function compartirProducto(idProducto) {
         const producto = productos.find(p => p.id === idProducto);
+        if (!producto) return; // Comprobación de seguridad
+
         const text = `¡Mira este producto en Home & Stationery: ${producto.nombre} por solo $${producto.precio.toFixed(2)}!`;
-        const pageUrl = window.location.origin + window.location.pathname.replace('index.html', '') + `producto.html?id=${producto.id}`;
+        // Forma más segura y robusta de construir la URL
+        const pageUrl = new URL(`producto.html?id=${producto.id}`, window.location.href).href;
         
         const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + pageUrl)}`;
-        window.open(url, '_blank');
+        window.open(url, '_blank', 'noopener,noreferrer'); // Añadido rel por seguridad
     }
 
     catalogoDiv.addEventListener('click', e => {
@@ -145,7 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let totalItems = 0;
         const MONTO_ENVIO_GRATIS = 100;
 
-        // Se limpia el mensaje de descuento
         infoDescuentoP.textContent = '';
 
         appState.carrito.forEach(item => {
@@ -261,15 +263,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         document.body.appendChild(imgClon);
 
-        imgClon.offsetHeight; 
+        requestAnimationFrame(() => {
+            imgClon.style.top = `${carritoRect.top + carritoRect.height / 2}px`;
+            imgClon.style.left = `${carritoRect.left + carritoRect.width / 2}px`;
+        });
 
-        imgClon.style.setProperty('--target-top', `${carritoRect.top + carritoRect.height / 2}px`);
-        imgClon.style.setProperty('--target-left', `${carritoRect.left + carritoRect.width / 2}px`);
-        
-        imgClon.style.top = `var(--target-top)`;
-        imgClon.style.left = `var(--target-left)`;
-
-        imgClon.addEventListener('animationend', () => {
+        imgClon.addEventListener('transitionend', () => {
             imgClon.remove();
         });
     }
@@ -397,7 +396,6 @@ document.addEventListener('DOMContentLoaded', () => {
             total += item.precio * item.cantidad;
         });
         
-        // Se elimina la lógica del descuento del mensaje
         mensaje += `\n*Total: $${total.toFixed(2)}*`;
         
         appState.orderHistory.push({ fecha: new Date().toISOString(), items: [...appState.carrito], total: total });
@@ -406,7 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarYGuardarCarrito();
         const telefono = '522481602590';
         const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-        window.open(url, '_blank');
+        window.open(url, '_blank', 'noopener,noreferrer');
         setTimeout(() => encuestaContainer.classList.remove('oculto'), 2000);
     }
     
