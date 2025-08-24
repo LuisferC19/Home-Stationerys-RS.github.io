@@ -29,7 +29,7 @@
     "precio": 55.00,
     "imagenes": ["img/ColoresVividel1.png", "img/ColoresVividel2.png", "img/ColoresVividel3.png"],
     "categoria": "utiles",
-    "descripcion": "Caja de 12 lápices de colores de madera con minas resistentes y tonos brillantes."
+    "descripcion": "Caja de 12 lápices de colores de la marca Jocar de madera con minas resistentes y tonos brillantes."
   },
   {
     "id": 5,
@@ -53,11 +53,11 @@
     "precio": 6.00,
     "imagenes": ["img/GomasFactis1.png", "img/GomasFactis2.png", "img/GomasFactis3.png"],
     "categoria": "utiles",
-    "descripcion": "Goma de migajón suave que no mancha ni maltrata el papel."
+    "descripcion": "Goma Factis de migajón suave que no mancha ni maltrata el papel."
   },
   {
     "id": 8,
-    "nombre": "Hojas de Color 50 pz",
+    "nombre": "Paquete de 50 hojas de colores",
     "precio": 45.00,
     "imagenes": ["img/FaltaImg.png", "img/FaltaImg.png", "img/FaltaImg.png"],
     "categoria": "utiles",
@@ -69,15 +69,15 @@
     "precio": 5.00,
     "imagenes": ["img/HojasFomi1.png", "img/HojasFomi2.png", "img/FaltaImg.png"],
     "categoria": "utiles",
-    "descripcion": "Pliego de fomi tamaño carta en diversos colores para manualidades."
+    "descripcion": "hojas de fomi tamaño carta en diversos colores para manualidades."
   },
   {
     "id": 10,
-    "nombre": "Hojas Blancas 50 pz",
+    "nombre": "Paquete de 50 hojas blancas",
     "precio": 30.00,
     "imagenes": ["img/FaltaImg.png", "img/FaltaImg.png", "img/FaltaImg.png"],
     "categoria": "utiles",
-    "descripcion": "Paquete de 50 hojas blancas de alta blancura, perfectas para impresión y tareas."
+    "descripcion": "Paquete de 50 hojas blancas, perfectas para impresión y tareas."
   },
   {
     "id": 11,
@@ -85,15 +85,15 @@
     "precio": 35.00,
     "imagenes": ["img/JuegoGeometrico1.png", "img/FaltaImg.png", "img/FaltaImg.png"],
     "categoria": "utiles",
-    "descripcion": "Set de reglas flexible y resistente. Incluye regla, escuadras y transportador."
+    "descripcion": "Set de reglas de plastico, transparentes y resistentes . Incluye regla, escuadras y transportador."
   },
   {
     "id": 12,
-    "nombre": "Lápiz bicolor",
+    "nombre": "Lápiz bicolor ",
     "precio": 8.00,
     "imagenes": ["img/LapizBicolor1.png", "img/LapizBicolor2.png", "img/LapizBicolor3.png"],
     "categoria": "utiles",
-    "descripcion": "Lápiz grueso con una mitad roja y otra azul, ideal para preescolar."
+    "descripcion": "Lápiz rojo carmin y azul de la marca Koovi."
   },
   {
     "id": 13,
@@ -101,7 +101,7 @@
     "precio": 8.00,
     "imagenes": ["img/LapizDuo1.png", "img/LapizDuo2.png", "img/LapizDuo3.png"],
     "categoria": "utiles",
-    "descripcion": "Lápiz con dos puntas, una de grafito y otra de color rojo."
+    "descripcion": "Lápiz de grafito y rojo carmin de la marca Koovi"
   },
   {
     "id": 14,
