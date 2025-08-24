@@ -3,7 +3,7 @@
     "id": 1,
     "nombre": "Audífonos de cable",
     "precio": 25.00,
-    "imagenes": ["img/FaltaImg.png", "img/AudifonosCable2.jpg","img/AudifonosCable3.jpg" ],
+    "imagenes": ["img/AudifonosCable1.png", "img/AudifonosCable2.png","img/AudifonosCable3.png" ],
     "categoria": "tecnologia",
     "descripcion": "Audífonos alámbricos con entrada de 3.5mm, sonido claro y micrófono integrado."
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "nombre": "Soportes para celular",
     "precio": 12.00,
-    "imagenes": ["img/PortaCelulares1.jpg"],
+    "imagenes": ["img/SoporteCelulares1.png", "img/SoporteCelulares2.png", "img/SoporteCelulares3.png"],
     "categoria": "tecnologia",
     "descripcion": "Soporte de plástico plegable para celular, ideal para ver videos o videollamadas."
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "nombre": "Cinta adhesiva",
     "precio": 5.00,
-    "imagenes": ["img/CintaAdesiva1.jpg", "img/CintaAdesiva2.jpg", "img/CintaAdesiva3.jpg"],
+    "imagenes": ["img/CintaAdesiva1.png", "img/CintaAdesiva2.png", "img/CintaAdesiva3.png"],
     "categoria": "utiles",
     "descripcion": "Rollo de cinta adhesiva transparente de 18mm de ancho."
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "nombre": "Colores Vividel 12 pz",
     "precio": 55.00,
-    "imagenes": ["img/ColoresVividel2.jpg", "img/ColoresVividel3.jpg", "img/FaltaImg.png"],
+    "imagenes": ["img/ColoresVividel1.png", "img/ColoresVividel2.png", "img/ColoresVividel3.png"],
     "categoria": "utiles",
     "descripcion": "Caja de 12 lápices de colores de madera con minas resistentes y tonos brillantes."
   },
@@ -35,7 +35,7 @@
     "id": 5,
     "nombre": "Corrector Pen de Lápiz",
     "precio": 16.00,
-    "imagenes": ["img/Corrector2.jpg", "img/Corrector3.jpg", "img/FaltaImg.png"],
+    "imagenes": ["img/CorrectorPen1.png", "img/CorrectorPen2.png", "img/CorrectorPen3.png"],
     "categoria": "utiles",
     "descripcion": "Corrector líquido en pluma con punta de metal para una aplicación precisa."
   },
@@ -43,7 +43,7 @@
     "id": 6,
     "nombre": "Forro adhesivo 1 metro",
     "precio": 11.00,
-    "imagenes": ["img/PapelContac1.jpg", "img/PapelContac2.jpg", "img/FaltaImg.png"],
+    "imagenes": ["img/PapelContac1.png", "img/PapelContac2.png", "img/PapelContac3.png"],
     "categoria": "utiles",
     "descripcion": "Rollo de plástico adhesivo transparente para forrar libros y cuadernos."
   },
@@ -51,7 +51,7 @@
     "id": 7,
     "nombre": "Goma Factis",
     "precio": 6.00,
-    "imagenes": ["img/GomaFactis1.jpg", "img/GomaFactis2.jpg", "img/GomaFactis3.jpg"],
+    "imagenes": ["img/GomasFactis1.png", "img/GomasFactis2.png", "img/GomasFactis3.png"],
     "categoria": "utiles",
     "descripcion": "Goma de migajón suave que no mancha ni maltrata el papel."
   },
@@ -59,7 +59,7 @@
     "id": 8,
     "nombre": "Hojas de Color 50 pz",
     "precio": 45.00,
-    "imagenes": ["img/HojasColor1.jpg", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/FaltaImg.png", "img/FaltaImg.png", "img/FaltaImg.png"],
     "categoria": "utiles",
     "descripcion": "Paquete con 50 hojas de colores surtidos tamaño carta, ideal para manualidades."
   },
@@ -67,7 +67,7 @@
     "id": 9,
     "nombre": "Hojas de Fomi",
     "precio": 5.00,
-    "imagenes": ["img/HojasDFomi1.jpg", "img/HojasDFomi2.jpg", "img/FaltaImg.png"],
+    "imagenes": ["img/HojasFomi1.png", "img/HojasFomi2.png", "img/FaltaImg.png"],
     "categoria": "utiles",
     "descripcion": "Pliego de fomi tamaño carta en diversos colores para manualidades."
   },
@@ -83,7 +83,7 @@
     "id": 11,
     "nombre": "Juego Geométrico",
     "precio": 35.00,
-    "imagenes": ["img/JuegoGeometrico1.jpg", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/JuegoGeometrico1.png", "img/FaltaImg.png", "img/FaltaImg.png"],
     "categoria": "utiles",
     "descripcion": "Set de reglas flexible y resistente. Incluye regla, escuadras y transportador."
   },
@@ -91,7 +91,7 @@
     "id": 12,
     "nombre": "Lápiz bicolor",
     "precio": 8.00,
-    "imagenes": ["img/LapizBicolor2.jpg", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/LapizBicolor1.png", "img/LapizBicolor2.png", "img/LapizBicolor3.png"],
     "categoria": "utiles",
     "descripcion": "Lápiz grueso con una mitad roja y otra azul, ideal para preescolar."
   },
@@ -99,7 +99,7 @@
     "id": 13,
     "nombre": "Lápiz duo",
     "precio": 8.00,
-    "imagenes": ["img/LapizDuo2.jpg", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/LapizDuo1.png", "img/LapizDuo2.png", "img/LapizDuo3.png"],
     "categoria": "utiles",
     "descripcion": "Lápiz con dos puntas, una de grafito y otra de color rojo."
   },
@@ -107,7 +107,7 @@
     "id": 14,
     "nombre": "Lápiz Maped",
     "precio": 6.00,
-    "imagenes": ["img/LapizMaped2.jpg", "img/LapizMaped3.jpg", "img/FaltaImg.png"],
+    "imagenes": ["img/LapizMaped1.png", "img/LapizMaped2.png", "img/LapizMaped3.png"],
     "categoria": "utiles",
     "descripcion": "Lápiz de grafito #2 con cuerpo triangular para un mejor agarre. Incluye goma."
   },
@@ -115,7 +115,7 @@
     "id": 15,
     "nombre": "Lapicero Azul Bic",
     "precio": 7.00,
-    "imagenes": ["img/FaltaImg.png", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/LapiceroAzulBic1.png", "img/LapiceroAzulBic2.png", "img/LapiceroAzulBic3.png"],
     "categoria": "utiles",
     "descripcion": "El clásico bolígrafo Bic de punto mediano en color azul. No puede faltar."
   },
@@ -123,7 +123,7 @@
     "id": 16,
     "nombre": "Lapicero negro Bic",
     "precio": 7.00,
-    "imagenes": ["img/FaltaImg.png", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/LapiceroNegroBic1.png", "img/LapiceroNegroBic2.png", "img/LapiceroNegroBic3.png"],
     "categoria": "utiles",
     "descripcion": "El clásico bolígrafo Bic de punto mediano en color negro. Escritura suave."
   },
@@ -131,7 +131,7 @@
     "id": 17,
     "nombre": "Lapicero Rojo Bic",
     "precio": 7.00,
-    "imagenes": ["img/FaltaImg.png", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/LapiceroRojoBic1.png", "img/LapiceroRojoBic2.png", "img/LapiceroRojoBic3.png"],
     "categoria": "utiles",
     "descripcion": "El clásico bolígrafo Bic de punto mediano en color rojo. Ideal para correcciones."
   },
@@ -139,7 +139,7 @@
     "id": 18,
     "nombre": "Libretas Cuadradas Estrella",
     "precio": 20.00,
-    "imagenes": ["img/FaltaImg.png", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/LibretaCuadradaEstrella1.png", "img/LibretaCuadradaEstrella2.png", "img/FaltaImg.png"],
     "categoria": "utiles",
     "descripcion": "La opción económica y confiable para tus tareas escolares. 90 hojas."
   },
@@ -147,7 +147,7 @@
     "id": 19,
     "nombre": "Libretas Cuadradas Perron",
     "precio": 28.00,
-    "imagenes": ["img/FaltaImg.png", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/LibretaCuadradaPerron1.png", "img/LibretaCuadradaPerron2.png", "img/LibretaCuadradaPerron3.png"],
     "categoria": "utiles",
     "descripcion": "Pasta dura y arillo metálico resistente. Ideal para uso rudo diario."
   },
@@ -155,7 +155,7 @@
     "id": 20,
     "nombre": "Libretas Cuadradas Scribe",
     "precio": 23.00,
-    "imagenes": ["img/FaltaImg.png", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/LibretaCuadriculadaScribe1.png", "img/LibretaCuadriculadaScribe2.png", "img/LibretaCuadriculadaScribe3.png"],
     "categoria": "utiles",
     "descripcion": "Libreta profesional Scribe de cuadro grande, 100 hojas de papel bond de alta calidad."
   },
@@ -163,7 +163,7 @@
     "id": 21,
     "nombre": "Libretas Rayadas Perron",
     "precio": 28.00,
-    "imagenes": ["img/FaltaImg.png", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/LibretaRayadaPerron1.png", "img/LibretaRayadaPerron2.png", "img/FaltaImg.png"],
     "categoria": "utiles",
     "descripcion": "Libreta de raya con pasta dura y un diseño moderno. 100 hojas."
   },
@@ -171,7 +171,7 @@
     "id": 22,
     "nombre": "Marca textos 3pz",
     "precio": 30.00,
-    "imagenes": ["img/MarcaTexto1.jpg", "img/MarcaTexto2.jpg", "img/MarcaTexto3.jpg"],
+    "imagenes": ["img/MarcaTextos1.png", "img/MarcaTextos2.png", "img/MarcaTextos3.png"],
     "categoria": "utiles",
     "descripcion": "Set de 3 marcatextos con punta de cincel en colores fluorescentes."
   },
@@ -179,7 +179,7 @@
     "id": 23,
     "nombre": "Mini engrapadora",
     "precio": 30.00,
-    "imagenes": ["img/MiniEngrapadoras1.jpg", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/MiniEngrapadoras1.png", "img/MiniEngrapadoras2.png", "img/MiniEngrapadoras3.png"],
     "categoria": "utiles",
     "descripcion": "Engrapadora compacta de bolsillo, incluye una caja de grapas."
   },
@@ -187,7 +187,7 @@
     "id": 24,
     "nombre": "Plumones de 12 piezas",
     "precio": 35.00,
-    "imagenes": ["img/FaltaImg.png", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/Plumoneslocar121.png", "img/Plumoneslocar122.png", "img/Plumoneslocar123.png"],
     "categoria": "utiles",
     "descripcion": "Paquete básico de 12 plumones de colores brillantes, no tóxicos."
   },
@@ -195,7 +195,7 @@
     "id": 25,
     "nombre": "Plumones de 24 piezas",
     "precio": 60.00,
-    "imagenes": ["img/PlumonesJocar241.jpg", "img/PlumonesJocar243.jpg", "img/FaltaImg.png"],
+    "imagenes": ["img/Plumoneslocar241.png", "img/Plumoneslocar242.png", "img/Plumoneslocar243.png"],
     "categoria": "utiles",
     "descripcion": "Set de 24 plumones de punta fina con colores vivos y de larga duración."
   },
@@ -203,7 +203,7 @@
     "id": 26,
     "nombre": "Plumones de pizarrón 3pz",
     "precio": 36.00,
-    "imagenes": ["img/PlumonesWhiteBoard2.jpg", "img/PlumonesWhiteBoard3.jpg", "img/FaltaImg.png"],
+    "imagenes": ["img/PlumonesWhiteboard1.png", "img/FaltaImg.png", "img/PlumonesWhiteboard3.png"],
     "categoria": "utiles",
     "descripcion": "Paquete de 3 marcadores para pizarrón blanco, fáciles de borrar (negro, azul, rojo)."
   },
@@ -211,7 +211,7 @@
     "id": 27,
     "nombre": "Resistol Dixon",
     "precio": 11.00,
-    "imagenes": ["img/ResitolDixon1.jpg", "img/ResitolDixon2.jpg", "img/ResitolDixon3.jpg"],
+    "imagenes": ["img/ResistolDixon1.png", "img/ResistolDixon2.png", "img/ResistolDixon3.png"],
     "categoria": "utiles",
     "descripcion": "Pegamento blanco líquido no tóxico, ideal para papel, madera y tela."
   },
@@ -219,7 +219,7 @@
     "id": 28,
     "nombre": "Sacapuntas",
     "precio": 2.00,
-    "imagenes": ["img/Sacapuntas1.jpg", "img/Sacapuntas3.jpg", "img/FaltaImg.png"],
+    "imagenes": ["img/Sacapuntas1.png", "img/Sacapuntas2.png", "img/FaltaImg.png"],
     "categoria": "utiles",
     "descripcion": "Sacapuntas de plástico con navaja de acero de alta calidad."
   },
@@ -227,7 +227,7 @@
     "id": 29,
     "nombre": "Figuras de lego",
     "precio": 30.00,
-    "imagenes": ["img/FiguraDLego1.jpg", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/JuegosLegos1.png", "img/FaltaImg.png", "img/FaltaImg.png"],
     "categoria": "otros",
     "descripcion": "Pequeño set de bloques de construcción compatible con Lego. Estimula la creatividad."
   },
@@ -235,7 +235,7 @@
     "id": 30,
     "nombre": "Juego de uno",
     "precio": 25.00,
-    "imagenes": ["img/JuegoUno3.jpg", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/JuegoUno1.png","img/FaltaImg.png" , "img/JuegoUno3.png"],
     "categoria": "otros",
     "descripcion": "El clásico juego de cartas 'Uno' para divertirte con amigos y familia."
   },
@@ -243,8 +243,24 @@
     "id": 31,
     "nombre": "Pistola de silicón",
     "precio": 40.00,
-    "imagenes": ["img/PistolaSilicon1.jpg", "img/PistolaSilicon2.jpg", "img/FaltaImg.png"],
+    "imagenes": ["img/PistolaSilicon1.png", "img/PistolaSilicon2.png", "img/PistolaSilicon3.png"],
     "categoria": "otros",
     "descripcion": "Pistola de silicón pequeña y práctica para manualidades y reparaciones rápidas."
+  },
+  {
+    "id": 32,
+    "nombre": "Barras de Silicón",
+    "precio": 2.00,
+    "imagenes": ["img/BarrasSilicon1.png", "img/BarrasSilicon2.png", "img/BarrasSilicon3.png"],
+    "categoria": "otros",
+    "descripcion": "Barra de silicón delgada para pistola pequeña. Adhesivo de alta resistencia."
+  },
+  {
+    "id": 33,
+    "nombre": "Impermeable",
+    "precio": 20.00,
+    "imagenes": ["img/Impermiable1.png", "img/FaltaImg.png", "img/Impermiable3.png"],
+    "categoria": "otros",
+    "descripcion": "Impermeable de plástico sencillo para protegerte de la lluvia."
   }
 ]
