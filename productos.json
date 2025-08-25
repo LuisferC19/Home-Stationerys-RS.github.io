@@ -67,7 +67,7 @@
     "id": 9,
     "nombre": "Hojas de Fomi",
     "precio": 5.00,
-    "imagenes": ["img/HojasFomi1.png", "img/HojasFomi2.png", "img/FaltaImg.png"],
+    "imagenes": ["img/HojasFomi1.png", "img/HojasFomi2.png", "img/HojasFomi3.png"],
     "categoria": "utiles",
     "descripcion": "hojas de fomi tamaño carta en diversos colores para manualidades."
   },
@@ -163,7 +163,7 @@
     "id": 21,
     "nombre": "Libretas Rayadas Perron",
     "precio": 28.00,
-    "imagenes": ["img/LibretaRayadaPerron1.png", "img/LibretaRayadaPerron2.png", "img/FaltaImg.png"],
+    "imagenes": ["img/LibretaRayadaPerron1.png", "img/LibretaRayadaPerron2.png","img/LibretaRayadaPerron3.png"],
     "categoria": "utiles",
     "descripcion": "Libreta de raya con pasta dura y un diseño moderno. 100 hojas."
   },
@@ -235,7 +235,7 @@
     "id": 30,
     "nombre": "Juego de uno",
     "precio": 25.00,
-    "imagenes": ["img/JuegoUno1.png", "img/JuegoUno3.png"],
+    "imagenes": ["img/JuegoUno1.png","img/JuegoUno2.png" ,"img/JuegoUno3.png"],
     "categoria": "otros",
     "descripcion": "El clásico juego de cartas 'Uno' para divertirte con amigos y familia."
   },
