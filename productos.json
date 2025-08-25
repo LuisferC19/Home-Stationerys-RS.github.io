@@ -59,7 +59,7 @@
     "id": 8,
     "nombre": "Paquete de 100 hojas de colores",
     "precio": 55.00,
-    "imagenes": ["img/FaltaImg.png", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/PaqHojasColor1.png", "img/PaqHojasColor2.png", "img/PaqHojasColor3.png"],
     "categoria": "utiles",
     "descripcion": "Paquete con 50 hojas de colores surtidos tamaño carta, ideal para manualidades."
   },
@@ -75,7 +75,7 @@
     "id": 10,
     "nombre": "Paquete de 100 hojas blancas",
     "precio": 30.00,
-    "imagenes": ["img/FaltaImg.png", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/PaqHojasBlanc1.png", "img/PaqHojasBlanc2.png", "img/PaqHojasBlanc3.png"],
     "categoria": "utiles",
     "descripcion": "Paquete de 50 hojas blancas, perfectas para impresión y tareas."
   },
@@ -227,7 +227,7 @@
     "id": 29,
     "nombre": "Figuras de lego",
     "precio": 25.00,
-    "imagenes": ["img/JuegosLegos1.png", "img/FaltaImg.png", "img/FaltaImg.png"],
+    "imagenes": ["img/JuegosLegos1.png", "img/JuegosLegos2.png", "img/JuegosLegos3.png"],
     "categoria": "otros",
     "descripcion": "Pequeño set de bloques de construcción compatible con Lego. Estimula la creatividad."
   },
@@ -235,7 +235,7 @@
     "id": 30,
     "nombre": "Juego de uno",
     "precio": 25.00,
-    "imagenes": ["img/JuegoUno1.png","img/FaltaImg.png" , "img/JuegoUno3.png"],
+    "imagenes": ["img/JuegoUno1.png", "img/JuegoUno3.png"],
     "categoria": "otros",
     "descripcion": "El clásico juego de cartas 'Uno' para divertirte con amigos y familia."
   },
@@ -262,5 +262,45 @@
     "imagenes": ["img/Impermiable1.png", "img/FaltaImg.png", "img/Impermiable3.png"],
     "categoria": "otros",
     "descripcion": "Impermeable de plástico sencillo para protegerte de la lluvia."
+  },
+  {
+    "id": 34,
+    "nombre": "Paquete de Lapiceros Paper Mate",
+    "precio": 25.00,
+    "imagenes": ["img/PaqLapicPaperMat1.png", "img/PaqLapicPaperMat2.png", "img/PaqLapicPaperMat3.png"],
+    "categoria": "utiles",
+    "descripcion": "Paquete de lapiceros Paper Mate de punto mediano, escritura suave y confiable."
+  },
+  {
+    "id": 35,
+    "nombre": "Regla de plastico flexible",
+    "precio": 15.00,
+    "imagenes": ["img/ReglaPlastFlex1.png", "img/ReglaPlastFlex2.png", "img/ReglaPlastFlex3.png"],
+    "categoria": "utiles",
+    "descripcion": "Regla de plástico flexible de 30 cm, resistente a caídas y torsiones. Ideal para uso escolar."
+  },
+  {
+    "id": 36,
+    "nombre": "Regla de plastico",
+    "precio": 10.00,
+    "imagenes": ["img/ReglaPlastico1.png", "img/ReglaPlastico2.png", "img/ReglaPlastico3.png"],
+    "categoria": "utiles",
+    "descripcion": "Regla de plástico rígido de 30 cm, graduada en centímetros y pulgadas."
+  },
+  {
+    "id": 37,
+    "nombre": "Plastilina Pen Gear",
+    "precio": 20.00,
+    "imagenes": ["img/PlastilinaPenGear1.png", "img/PlastilinaPenGear2.png", "img/PlastilinaPenGear3.png"],
+    "categoria": "utiles",
+    "descripcion": "Paquete de barras de plastilina Pen Gear en colores surtidos, no tóxica y fácil de moldear."
+  },
+  {
+    "id": 38,
+    "nombre": "Paquete de 12 plumines",
+    "precio": 15.00,
+    "imagenes": ["img/PaqPlumines121.png", "img/PaqPlumines122.png", "img/PaqPlumines123.png"],
+    "categoria": "utiles",
+    "descripcion": "Paquete económico de 12 plumones de punta delgada en colores variados."
   }
 ]
