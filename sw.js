@@ -1,5 +1,5 @@
 // Se incrementa la versión para forzar la actualización del caché en los navegadores de los usuarios
-const CACHE_NAME = 'material-tepetitla-v9'; 
+const CACHE_NAME = 'material-tepetitla-v10'; 
 const urlsToCache = [
   './',
   './index.html',
@@ -23,8 +23,8 @@ const urlsToCache = [
   './img/CorrectorPen1.png', './img/CorrectorPen2.png', './img/CorrectorPen3.png',
   './img/PapelContac1.png', './img/PapelContac2.png', './img/PapelContac3.png',
   './img/GomasFactis1.png', './img/GomasFactis2.png', './img/GomasFactis3.png',
-  './img/HojasFomi1.png', './img/HojasFomi2.png',
-  './img/JuegoGeometrico1.png',
+  './img/HojasFomi1.png', './img/HojasFomi2.png','./img/HojasFomi3.png',
+  './img/JuegoGeometrico1.png','./img/JuegoGeometrico2.png','./img/JuegoGeometrico3.png',
   './img/LapizBicolor1.png', './img/LapizBicolor2.png', './img/LapizBicolor3.png',
   './img/LapizDuo1.png', './img/LapizDuo2.png', './img/LapizDuo3.png',
   './img/LapizMaped1.png', './img/LapizMaped2.png', './img/LapizMaped3.png',
@@ -34,19 +34,28 @@ const urlsToCache = [
   './img/LibretaCuadradaEstrella1.png', './img/LibretaCuadradaEstrella2.png',
   './img/LibretaCuadradaPerron1.png', './img/LibretaCuadradaPerron2.png', './img/LibretaCuadradaPerron3.png',
   './img/LibretaCuadriculadaScribe1.png', './img/LibretaCuadriculadaScribe2.png', './img/LibretaCuadriculadaScribe3.png',
-  './img/LibretaRayadaPerron1.png', './img/LibretaRayadaPerron2.png',
+  './img/LibretaRayadaPerron1.png', './img/LibretaRayadaPerron2.png','./img/LibretaRayadaPerron3.png',
   './img/MarcaTextos1.png', './img/MarcaTextos2.png', './img/MarcaTextos3.png',
   './img/MiniEngrapadoras1.png', './img/MiniEngrapadoras2.png', './img/MiniEngrapadoras3.png',
   './img/PlumonesJocar121.png', './img/PlumonesJocar122.png', './img/PlumonesJocar123.png',
   './img/PlumonesJocar241.png', './img/PlumonesJocar242.png', './img/PlumonesJocar243.png',
   './img/PlumonesWhiteboard1.png', './img/PlumonesWhiteboard2.png', './img/PlumonesWhiteboard3.png',
   './img/ResistolDixon1.png', './img/ResistolDixon2.png', './img/ResistolDixon3.png',
-  './img/Sacapuntas1.png', './img/Sacapuntas2.png', './img/Sacapuntas3.png',
-  './img/JuegosLegos1.png',
-  './img/JuegoUno1.png', './img/JuegoUno3.png',
+  './img/Sacapuntas1.png', './img/Sacapuntas2.png',
+  './img/JuegosLegos1.png', './img/JuegosLegos2.png', './img/JuegosLegos3.png',
+  './img/JuegoUno1.png', './img/JuegoUno2.png','./img/JuegoUno3.png',
   './img/PistolaSilicon1.png', './img/PistolaSilicon2.png', './img/PistolaSilicon3.png',
   './img/BarrasSilicon1.png', './img/BarrasSilicon2.png', './img/BarrasSilicon3.png',
-  './img/Impermiable1.png'
+  './img/Impermiable1.png','./img/Impermiable3.png',
+  
+  // --- Nuevas imágenes agregadas ---
+  './img/PaqHojasBlanc1.png', './img/PaqHojasBlanc2.png', './img/PaqHojasBlanc3.png',
+  './img/PaqHojasColor1.png', './img/PaqHojasColor2.png', './img/PaqHojasColor3.png',
+  './img/PaqLapicPaperMat1.png', './img/PaqLapicPaperMat2.png', './img/PaqLapicPaperMat3.png',
+  './img/PaqPlumines121.png', './img/PaqPlumines122.png', './img/PaqPlumines123.png',
+  './img/PlastilinaPenGear1.png', './img/PlastilinaPenGear2.png', './img/PlastilinaPenGear3.png',
+  './img/ReglaPlastFlex1.png', './img/ReglaPlastFlex2.png', './img/ReglaPlastFlex3.png',
+  './img/ReglaPlastico1.png', './img/ReglaPlastico2.png', './img/ReglaPlastico3.png'
 ];
 
 self.addEventListener('install', event => {
@@ -82,6 +91,3 @@ self.addEventListener('fetch', event => {
     })
   );
 });
-
-
-
