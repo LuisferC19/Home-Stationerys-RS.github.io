@@ -18,7 +18,7 @@
   {
     "id": 3,
     "nombre": "Cinta adhesiva",
-    "precio": 5.00,
+    "precio": 3.50,
     "imagenes": ["img/CintaAdesiva1.png", "img/CintaAdesiva2.png", "img/CintaAdesiva3.png"],
     "categoria": "utiles",
     "descripcion": "Rollo de cinta adhesiva transparente de 18mm de ancho."
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "nombre": "Colores Vividel 12 pz",
-    "precio": 55.00,
+    "precio": 60.00,
     "imagenes": ["img/ColoresVividel1.png", "img/ColoresVividel2.png", "img/ColoresVividel3.png"],
     "categoria": "utiles",
     "descripcion": "Caja de 12 lápices de colores de la marca Jocar de madera con minas resistentes y tonos brillantes."
@@ -42,7 +42,7 @@
   {
     "id": 6,
     "nombre": "Forro adhesivo Contac 1 metro",
-    "precio": 11.00,
+    "precio": 10.00,
     "imagenes": ["img/PapelContac1.png", "img/PapelContac2.png", "img/PapelContac3.png"],
     "categoria": "utiles",
     "descripcion": "Rollo de plástico adhesivo transparente para forrar libros y cuadernos."
@@ -50,15 +50,15 @@
   {
     "id": 7,
     "nombre": "Goma Factis",
-    "precio": 6.00,
+    "precio": 5.00,
     "imagenes": ["img/GomasFactis1.png", "img/GomasFactis2.png", "img/GomasFactis3.png"],
     "categoria": "utiles",
     "descripcion": "Goma Factis de migajón suave que no mancha ni maltrata el papel."
   },
   {
     "id": 8,
-    "nombre": "Paquete de 50 hojas de colores",
-    "precio": 45.00,
+    "nombre": "Paquete de 100 hojas de colores",
+    "precio": 55.00,
     "imagenes": ["img/FaltaImg.png", "img/FaltaImg.png", "img/FaltaImg.png"],
     "categoria": "utiles",
     "descripcion": "Paquete con 50 hojas de colores surtidos tamaño carta, ideal para manualidades."
@@ -73,7 +73,7 @@
   },
   {
     "id": 10,
-    "nombre": "Paquete de 50 hojas blancas",
+    "nombre": "Paquete de 100 hojas blancas",
     "precio": 30.00,
     "imagenes": ["img/FaltaImg.png", "img/FaltaImg.png", "img/FaltaImg.png"],
     "categoria": "utiles",
@@ -90,7 +90,7 @@
   {
     "id": 12,
     "nombre": "Lápiz bicolor ",
-    "precio": 8.00,
+    "precio": 7.00,
     "imagenes": ["img/LapizBicolor1.png", "img/LapizBicolor2.png", "img/LapizBicolor3.png"],
     "categoria": "utiles",
     "descripcion": "Lápiz rojo carmin y azul de la marca Koovi."
@@ -98,7 +98,7 @@
   {
     "id": 13,
     "nombre": "Lápiz duo",
-    "precio": 8.00,
+    "precio": 7.00,
     "imagenes": ["img/LapizDuo1.png", "img/LapizDuo2.png", "img/LapizDuo3.png"],
     "categoria": "utiles",
     "descripcion": "Lápiz de grafito y rojo carmin de la marca Koovi"
@@ -106,7 +106,7 @@
   {
     "id": 14,
     "nombre": "Lápiz Maped",
-    "precio": 6.00,
+    "precio": 5.00,
     "imagenes": ["img/LapizMaped1.png", "img/LapizMaped2.png", "img/LapizMaped3.png"],
     "categoria": "utiles",
     "descripcion": "Lápiz de grafito #2 con cuerpo triangular para un mejor agarre. Incluye goma."
@@ -114,7 +114,7 @@
   {
     "id": 15,
     "nombre": "Lapicero Azul Bic",
-    "precio": 7.00,
+    "precio": 5.00,
     "imagenes": ["img/LapiceroAzulBic1.png", "img/LapiceroAzulBic2.png", "img/LapiceroAzulBic3.png"],
     "categoria": "utiles",
     "descripcion": "El clásico bolígrafo Bic de punto mediano en color azul. No puede faltar."
@@ -122,7 +122,7 @@
   {
     "id": 16,
     "nombre": "Lapicero negro Bic",
-    "precio": 7.00,
+    "precio": 5.00,
     "imagenes": ["img/LapiceroNegroBic1.png", "img/LapiceroNegroBic2.png", "img/LapiceroNegroBic3.png"],
     "categoria": "utiles",
     "descripcion": "El clásico bolígrafo Bic de punto mediano en color negro. Escritura suave."
@@ -130,7 +130,7 @@
   {
     "id": 17,
     "nombre": "Lapicero Rojo Bic",
-    "precio": 7.00,
+    "precio": 5.00,
     "imagenes": ["img/LapiceroRojoBic1.png", "img/LapiceroRojoBic2.png", "img/LapiceroRojoBic3.png"],
     "categoria": "utiles",
     "descripcion": "El clásico bolígrafo Bic de punto mediano en color rojo. Ideal para correcciones."
@@ -169,8 +169,8 @@
   },
   {
     "id": 22,
-    "nombre": "Marca textos 3pz",
-    "precio": 30.00,
+    "nombre": "Marca textos 4pz",
+    "precio": 35.00,
     "imagenes": ["img/MarcaTextos1.png", "img/MarcaTextos2.png", "img/MarcaTextos3.png"],
     "categoria": "utiles",
     "descripcion": "Set de 3 marcatextos con punta de cincel en colores fluorescentes."
@@ -178,7 +178,7 @@
   {
     "id": 23,
     "nombre": "Mini engrapadora",
-    "precio": 30.00,
+    "precio": 33.00,
     "imagenes": ["img/MiniEngrapadoras1.png", "img/MiniEngrapadoras2.png", "img/MiniEngrapadoras3.png"],
     "categoria": "utiles",
     "descripcion": "Engrapadora compacta de bolsillo, incluye una caja de grapas."
@@ -186,7 +186,7 @@
   {
     "id": 24,
     "nombre": "Plumones Jocar de 12 piezas",
-    "precio": 35.00,
+    "precio": 60.00,
     "imagenes": ["img/PlumonesJocar121.png", "img/PlumonesJocar122.png", "img/PlumonesJocar123.png"],
     "categoria": "utiles",
     "descripcion": "Paquete básico de 12 plumones de colores brillantes, no tóxicos."
@@ -194,7 +194,7 @@
   {
     "id": 25,
     "nombre": "Plumones Jocar de 24 piezas",
-    "precio": 60.00,
+    "precio": 125.00,
     "imagenes": ["img/PlumonesJocar241.png", "img/PlumonesJocar242.png", "img/PlumonesJocar243.png"],
     "categoria": "utiles",
     "descripcion": "Set de 24 plumones de punta fina con colores vivos y de larga duración."
@@ -210,7 +210,7 @@
   {
     "id": 27,
     "nombre": "Resistol Dixon",
-    "precio": 11.00,
+    "precio": 15.00,
     "imagenes": ["img/ResistolDixon1.png", "img/ResistolDixon2.png", "img/ResistolDixon3.png"],
     "categoria": "utiles",
     "descripcion": "Pegamento blanco líquido no tóxico, ideal para papel, madera y tela."
@@ -226,7 +226,7 @@
   {
     "id": 29,
     "nombre": "Figuras de lego",
-    "precio": 30.00,
+    "precio": 25.00,
     "imagenes": ["img/JuegosLegos1.png", "img/FaltaImg.png", "img/FaltaImg.png"],
     "categoria": "otros",
     "descripcion": "Pequeño set de bloques de construcción compatible con Lego. Estimula la creatividad."
@@ -242,7 +242,7 @@
   {
     "id": 31,
     "nombre": "Pistola de silicón",
-    "precio": 40.00,
+    "precio": 45.00,
     "imagenes": ["img/PistolaSilicon1.png", "img/PistolaSilicon2.png", "img/PistolaSilicon3.png"],
     "categoria": "otros",
     "descripcion": "Pistola de silicón pequeña y práctica para manualidades y reparaciones rápidas."
@@ -258,7 +258,7 @@
   {
     "id": 33,
     "nombre": "Impermeable",
-    "precio": 20.00,
+    "precio": 40.00,
     "imagenes": ["img/Impermiable1.png", "img/FaltaImg.png", "img/Impermiable3.png"],
     "categoria": "otros",
     "descripcion": "Impermeable de plástico sencillo para protegerte de la lluvia."
