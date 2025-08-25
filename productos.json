@@ -201,11 +201,11 @@
   },
   {
     "id": 26,
-    "nombre": "Plumones Whiteboard de pizarrón 3pz",
-    "precio": 36.00,
+    "nombre": "Plumones Whiteboard de pizarrón 4pz",
+    "precio": 38.00,
     "imagenes": ["img/PlumonesWhiteboard1.png", "img/FaltaImg.png", "img/PlumonesWhiteboard3.png"],
     "categoria": "utiles",
-    "descripcion": "Paquete de 3 marcadores para pizarrón blanco, fáciles de borrar (negro, azul, rojo)."
+    "descripcion": "Paquete de 4 marcadores para pizarrón blanco, fáciles de borrar (negro, azul, rojo y verde)."
   },
   {
     "id": 27,
