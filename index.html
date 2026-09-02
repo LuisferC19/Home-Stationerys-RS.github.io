@@ -16,10 +16,10 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <button id="btnMenu" aria-label="Abrir menú" class="btn-hamburguesa">☰</button>
+            <button id="btnMenu" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar" class="btn-hamburguesa">☰</button>
             
             <a href="index.html" class="title-container" style="text-decoration: none; color: inherit;">
-                <img src="img/HomeStatio.png" alt="Logo de Home & Stationery" class="header-logo">
+                <img src="img/thumb/HomeStatio.webp" alt="Logo de Home & Stationery" class="header-logo">
                 <h1 class="header-title">Home & Stationery</h1>
             </a>
 
@@ -47,6 +47,13 @@
                     <option value="utiles">Útiles escolares</option>
                     <option value="tecnologia">Tecnología</option>
                     <option value="otros">Otros</option>
+                </select>
+                <label for="ordenarFiltro">Ordenar por</label>
+                <select id="ordenarFiltro" aria-label="Ordenar productos">
+                    <option value="relevancia">Relevancia</option>
+                    <option value="precio-asc">Precio: menor a mayor</option>
+                    <option value="precio-desc">Precio: mayor a menor</option>
+                    <option value="nombre-asc">Nombre: A-Z</option>
                 </select>
                 <div class="nav-extras">
                     <button id="historialPedidosBtn">📄 Historial de Pedidos</button>
@@ -127,7 +134,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="js/index-page.js"></script>
     <script src="sw-register.js"></script>
 </body>
 </html>
