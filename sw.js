@@ -1,93 +1,91 @@
 // Se incrementa la versión para forzar la actualización del caché en los navegadores de los usuarios
-const CACHE_NAME = 'material-tepetitla-v10'; 
-const urlsToCache = [
+const CACHE_NAME = 'home-stationery-v12';
+const RUNTIME_CACHE = 'home-stationery-runtime-v12';
+
+// Solo el "esqueleto" de la app se precachea al instalar.
+// Las imágenes se cachean dinámicamente la primera vez que se piden (ver 'fetch' abajo),
+// así no hace falta mantener a mano una lista de 200+ archivos.
+const APP_SHELL = [
   './',
   './index.html',
   './producto.html',
   './styles.css',
-  './script.js',
-  './producto.js',
-  './productos.json',
   './manifest.json',
   './sw-register.js',
-  './img/HomeStatio.png',
+  './js/storage.js',
+  './js/toast.js',
+  './js/theme.js',
+  './js/cart.js',
+  './js/recentlyViewed.js',
+  './js/productsApi.js',
+  './js/productCard.js',
+  './js/index-page.js',
+  './js/detalle-page.js',
   './icon-192.png',
   './icon-512.png',
-  './img/FaltaImg.png',
-
-  // --- Lista completa y actualizada de imágenes de productos ---
-  './img/AudifonosCable1.png', './img/AudifonosCable2.png', './img/AudifonosCable3.png',
-  './img/SoporteCelulares1.png', './img/SoporteCelulares2.png', './img/SoporteCelulares3.png',
-  './img/CintaAdesiva1.png', './img/CintaAdesiva2.png', './img/CintaAdesiva3.png',
-  './img/ColoresVividel1.png', './img/ColoresVividel2.png', './img/ColoresVividel3.png',
-  './img/CorrectorPen1.png', './img/CorrectorPen2.png', './img/CorrectorPen3.png',
-  './img/PapelContac1.png', './img/PapelContac2.png', './img/PapelContac3.png',
-  './img/GomasFactis1.png', './img/GomasFactis2.png', './img/GomasFactis3.png',
-  './img/HojasFomi1.png', './img/HojasFomi2.png','./img/HojasFomi3.png',
-  './img/JuegoGeometrico1.png','./img/JuegoGeometrico2.png','./img/JuegoGeometrico3.png',
-  './img/LapizBicolor1.png', './img/LapizBicolor2.png', './img/LapizBicolor3.png',
-  './img/LapizDuo1.png', './img/LapizDuo2.png', './img/LapizDuo3.png',
-  './img/LapizMaped1.png', './img/LapizMaped2.png', './img/LapizMaped3.png',
-  './img/LapiceroAzulBic1.png', './img/LapiceroAzulBic2.png', './img/LapiceroAzulBic3.png',
-  './img/LapiceroNegroBic1.png', './img/LapiceroNegroBic2.png', './img/LapiceroNegroBic3.png',
-  './img/LapiceroRojoBic1.png', './img/LapiceroRojoBic2.png', './img/LapiceroRojoBic3.png',
-  './img/LibretaCuadradaEstrella1.png', './img/LibretaCuadradaEstrella2.png',
-  './img/LibretaCuadradaPerron1.png', './img/LibretaCuadradaPerron2.png', './img/LibretaCuadradaPerron3.png',
-  './img/LibretaCuadriculadaScribe1.png', './img/LibretaCuadriculadaScribe2.png', './img/LibretaCuadriculadaScribe3.png',
-  './img/LibretaRayadaPerron1.png', './img/LibretaRayadaPerron2.png','./img/LibretaRayadaPerron3.png',
-  './img/MarcaTextos1.png', './img/MarcaTextos2.png', './img/MarcaTextos3.png',
-  './img/MiniEngrapadoras1.png', './img/MiniEngrapadoras2.png', './img/MiniEngrapadoras3.png',
-  './img/PlumonesJocar121.png', './img/PlumonesJocar122.png', './img/PlumonesJocar123.png',
-  './img/PlumonesJocar241.png', './img/PlumonesJocar242.png', './img/PlumonesJocar243.png',
-  './img/PlumonesWhiteboard1.png', './img/PlumonesWhiteboard2.png', './img/PlumonesWhiteboard3.png',
-  './img/ResistolDixon1.png', './img/ResistolDixon2.png', './img/ResistolDixon3.png',
-  './img/Sacapuntas1.png', './img/Sacapuntas2.png',
-  './img/JuegosLegos1.png', './img/JuegosLegos2.png', './img/JuegosLegos3.png',
-  './img/JuegoUno1.png', './img/JuegoUno2.png','./img/JuegoUno3.png',
-  './img/PistolaSilicon1.png', './img/PistolaSilicon2.png', './img/PistolaSilicon3.png',
-  './img/BarrasSilicon1.png', './img/BarrasSilicon2.png', './img/BarrasSilicon3.png',
-  './img/Impermiable1.png','./img/Impermiable3.png',
-  
-  // --- Nuevas imágenes agregadas ---
-  './img/PaqHojasBlanc1.png', './img/PaqHojasBlanc2.png', './img/PaqHojasBlanc3.png',
-  './img/PaqHojasColor1.png', './img/PaqHojasColor2.png', './img/PaqHojasColor3.png',
-  './img/PaqLapicPaperMat1.png', './img/PaqLapicPaperMat2.png', './img/PaqLapicPaperMat3.png',
-  './img/PaqPlumines121.png', './img/PaqPlumines122.png', './img/PaqPlumines123.png',
-  './img/PlastilinaPenGear1.png', './img/PlastilinaPenGear2.png', './img/PlastilinaPenGear3.png',
-  './img/ReglaPlastFlex1.png', './img/ReglaPlastFlex2.png', './img/ReglaPlastFlex3.png',
-  './img/ReglaPlastico1.png', './img/ReglaPlastico2.png', './img/ReglaPlastico3.png'
+  './img/thumb/HomeStatio.webp',
+  './img/thumb/FaltaImg.webp',
+  './img/full/FaltaImg.webp',
 ];
 
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-    .then(cache => {
-        console.log('Cache abierto y archivos añadidos');
-        // Usar un catch para evitar que un solo error de imagen rompa toda la instalación
-        return cache.addAll(urlsToCache).catch(error => {
-            console.error('Fallo al cachear algunos archivos durante la instalación:', error);
-        });
-    })
+      .then(cache => cache.addAll(APP_SHELL))
+      .catch(error => console.error('Fallo al precachear el app shell:', error))
   );
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys =>
       Promise.all(
-        keys.filter(key => key !== CACHE_NAME)
-        .map(key => caches.delete(key))
+        keys
+          .filter(key => key !== CACHE_NAME && key !== RUNTIME_CACHE)
+          .map(key => caches.delete(key))
       )
     )
   );
+  self.clients.claim();
 });
 
 self.addEventListener('fetch', event => {
+  const url = new URL(event.request.url);
+
+  // productos.json: red primero (para ver precios/productos nuevos al instante),
+  // con el caché como respaldo si no hay conexión.
+  if (url.pathname.endsWith('/productos.json')) {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          const clone = response.clone();
+          caches.open(RUNTIME_CACHE).then(cache => cache.put(event.request, clone));
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // Imágenes (img/thumb/ e img/full/): caché primero, y si no está, se pide
+  // a la red y se guarda para la próxima vez (cache-first con relleno dinámico).
+  if (url.pathname.includes('/img/thumb/') || url.pathname.includes('/img/full/')) {
+    event.respondWith(
+      caches.match(event.request).then(cached => {
+        if (cached) return cached;
+        return fetch(event.request).then(response => {
+          const clone = response.clone();
+          caches.open(RUNTIME_CACHE).then(cache => cache.put(event.request, clone));
+          return response;
+        });
+      })
+    );
+    return;
+  }
+
+  // Resto de archivos (HTML, CSS, JS): caché primero, red como respaldo.
   event.respondWith(
-    caches.match(event.request)
-    .then(resp => {
-        // Devuelve la respuesta del caché si existe, si no, la busca en la red
-        return resp || fetch(event.request);
-    })
+    caches.match(event.request).then(resp => resp || fetch(event.request))
   );
 });
